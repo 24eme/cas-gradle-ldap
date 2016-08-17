@@ -19,10 +19,8 @@ dependencies {
     runtime("org.jasig.cas:cas-server-webapp:${project.'cas.version'}@war") {
         transitive = true
     }
-    runtime("org.jasig.cas:cas-server-support-ldap:${project.'cas.version'}") {
-    }
-    runtime("org.jasig.service.persondir:person-directory-impl:1.7.1")  {
-    }
+    runtime("org.jasig.cas:cas-server-support-ldap:${project.'cas.version'}")
+    runtime("org.jasig.service.persondir:person-directory-impl:1.7.1")
 }
 
 war {
