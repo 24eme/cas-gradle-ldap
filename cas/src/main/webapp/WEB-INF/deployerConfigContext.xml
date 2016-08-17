@@ -8,17 +8,20 @@
        xmlns:tx="http://www.springframework.org/schema/tx"
        xmlns:util="http://www.springframework.org/schema/util"
        xmlns:sec="http://www.springframework.org/schema/security"
+       xmlns:ldaptive="http://www.ldaptive.org/schema/spring-ext"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
        http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd
-       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+       http://www.ldaptive.org/schema/spring-ext http://www.ldaptive.org/schema/spring-ext.xsd">
 
 
     <util:map id="authenticationHandlersResolvers">
         <entry key-ref="proxyAuthenticationHandler" value-ref="proxyPrincipalResolver" />
         <entry key-ref="primaryAuthenticationHandler" value-ref="primaryPrincipalResolver" />
+        <entry key-ref="ldapAuthenticationHandler" value-ref="primaryPrincipalResolver" />
     </util:map>
 
     <util:list id="authenticationMetadataPopulators">
@@ -62,6 +65,32 @@
           class="org.jasig.inspektr.audit.support.Slf4jLoggingAuditTrailManager"
           p:entrySeparator="${cas.audit.singleline.separator:|}"
           p:useSingleLine="${cas.audit.singleline:false}"/>
+
+    <bean id="ldapAuthenticationHandler"
+      class="org.jasig.cas.authentication.LdapAuthenticationHandler"
+      p:principalIdAttribute="uid"
+      c:authenticator-ref="authenticator" />
+
+    <ldaptive:anonymous-search-authenticator id="authenticator"
+       ldapUrl="${ldap.url}"
+       connectTimeout="${ldap.connectTimeout}"
+       validateOnCheckOut="${ldap.pool.validateOnCheckout}"
+       failFastInitialize="true"
+       blockWaitTime="${ldap.pool.blockWaitTime}"
+       idleTime="${ldap.pool.idleTime}"
+       maxPoolSize="${ldap.pool.maxSize}"
+       minPoolSize="${ldap.pool.minSize}"
+       validatePeriodically="${ldap.pool.validatePeriodically}"
+       validatePeriod="${ldap.pool.validatePeriod}"
+       prunePeriod="${ldap.pool.prunePeriod}"
+       useSSL="${ldap.use.ssl:false}"
+       useStartTLS="${ldap.useStartTLS}"
+       usePasswordPolicy="${ldap.usePpolicy:true}"
+       allowMultipleDns="${ldap.allowMultipleDns:false}"
+       baseDn="${ldap.baseDn}"
+       subtreeSearch="${ldap.subtree.search:true}"
+       userFilter="${ldap.authn.searchFilter}" />
+
 
     <alias name="neverThrottle" alias="authenticationThrottle" />
 

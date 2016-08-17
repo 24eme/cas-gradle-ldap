@@ -1,68 +1,10 @@
-CAS Gradle Overlay
+CAS Gradle Overlay for LDAP
 ============================
-Generic CAS gradle war overlay to exercise the latest versions of CAS. This overlay could be freely used as a starting template for local 
-CAS gradle war overlays. 
 
-## Versions
+This project is a fork of [apereo's CAS Gradle Overlay Template](https://github.com/apereo/cas-gradle-overlay-template). It produices a war file for CAS with LDAP support.
 
-* CAS 4.2.x
+The following command generate the war file :
 
-## Requirements
+     ./gradlew clean build
 
-* JDK 1.7+
-
-## Configuration
-
-The `etc` directory contains the configuration files that need to be copied to `/etc/cas` 
-and configured to satisfy local deployment environment configuration needs.
-
-## Build
-
-```bash
-./gradlew[.bat] clean build
-```
-
-To produce an exploded war directory (convenient during development, etc.)
-
-```bash
-./gradlew[.bat] clean build explodeWar
-```
-
-## Deployment
-
-### Embedded Jetty
-
-- Create a Java keystore under `/etc/cas/jetty`
-- Import your CAS server certificate inside this keystore.
-- Edit your `~/.gradle/gradle.properties` to include:
-
-```properties
-jettySslKeyStorePath=/etc/cas/jetty/thekeystore
-jettySslTrustStorePath=/etc/cas/jetty/thekeystore
-jettySslTrustStorePassword=changeit
-jettySslKeyStorePassword=changeit
-```
-
-Then run:
-
-```bash
-./gradlew[.bat] clean build jettyRunWar 
-```
-
-CAS will be available at:
-
-- http://cas.server.name:8080/cas
-- https://cas.server.name:8443/cas
-
-If you do not specify a keystore configuration, CAS will simply run on port `8080`.
-
-### External
-
-Deploy resultant `cas/build/libs/cas.war` to a Servlet container of choice.
-
-Remember to start your container with the following variables set with `-D`:
-
-```properties
-cas.properties.config.location=file:/etc/cas/cas.properties
-log4j.configurationFile=/etc/cas/log4j2.xml
-```
+The produiced war is then available in ``cas/build/libs/cas.war``. To customize the war, add or change ``cas/src/main/webapp/``.
