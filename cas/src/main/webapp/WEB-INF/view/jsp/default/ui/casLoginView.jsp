@@ -56,7 +56,7 @@
         </section>
 
 						<p>
-						<a href="https://declaration.ivsopro.com/mot_de_passe_oublie">Mot de passe oublié ?</a>
+						<a href="https://declaration.ivbdpro.fr/mot_de_passe_oublie">Mot de passe oublié ?</a>
 						</p>
 
 
@@ -69,6 +69,6 @@
 							S'il s'agit de votre première connexion, munissez vous de votre identifiant et du code de création à 4 chiffres de création reçus par courrier :
 						</p>
 			
-						<a href="https://declaration.ivsopro.com/teledeclarant/code_creation" class="btn">Créer votre compte</a>
+						<a href="https://declaration.ivbdpro.fr/teledeclarant/code_creation" class="btn">Créer votre compte</a>
 					</div>
 <jsp:directive.include file="includes/bottom.jsp" />
