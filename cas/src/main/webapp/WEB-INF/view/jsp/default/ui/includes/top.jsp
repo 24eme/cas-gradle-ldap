@@ -7,7 +7,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <html lang="fr">
 	<head>
-		<title>Authentification de l'espace des professionnels des vins et spiritueux du Sud-ouestCAS</title>
+		<title>Espace interprofessionnel des vins de Bergerac et Duras</title>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.css" media="screen" />
