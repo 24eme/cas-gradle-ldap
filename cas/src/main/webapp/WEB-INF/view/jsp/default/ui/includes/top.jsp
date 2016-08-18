@@ -22,20 +22,10 @@
 	<body>
 		<div id="page">
 			<header id="header">
-				<div class="header-top">
-					<div class="container">
-						<h1 class="logo-site">
-							<img src="images/logo-site.png" alt="France sud ouest. Les vins à découvrir." />
-							Espace des professionnels des vins et spiritueux du Sud-ouest
-						</h1>
-
-						<div class="logos">
-							<img src="images/logo-armagnac.png" alt="Armagnac" />
-							<img src="images/logo-floc.png" alt="Floc de Gascogne" />
-							<img src="images/logo-cahors.png" alt="Cahors A.O.C" />
-						</div>
-					</div>
-				</div>
+				<h1 class="logo-site">
+					<img src="images/logo-site.png" alt="Interprofession des Vins de Bergerac et Duras" />
+					Espace des Professionels des vins de Bergerac et Duras
+				</h1>
 			</header>
 			<div id="content" style="min-height: 500px">
 				<div class="form-block">

@@ -1,21 +1,14 @@
 @font-face {
-  font-family: 'overlockregular';
-  src: url('../fonts/overlock-regular-webfont.eot');
-  src: url('../fonts/overlock-regular-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/overlock-regular-webfont.woff2') format('woff2'), url('../fonts/overlock-regular-webfont.woff') format('woff'), url('../fonts/overlock-regular-webfont.ttf') format('truetype'), url('../fonts/overlock-regular-webfont.svg#overlockregular') format('svg');
+  font-family: 'arapeyregular';
+  src: url('../fonts/arapey-regular-webfont.eot');
+  src: url('../fonts/arapey-regular-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/arapey-regular-webfont.woff2') format('woff2'), url('../fonts/arapey-regular-webfont.woff') format('woff'), url('../fonts/arapey-regular-webfont.ttf') format('truetype'), url('../fonts/arapey-regular-webfont.svg#arapeyregular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: 'overlockblack';
-  src: url('../fonts/overlock-black-webfont.eot');
-  src: url('../fonts/overlock-black-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/overlock-black-webfont.woff2') format('woff2'), url('../fonts/overlock-black-webfont.woff') format('woff'), url('../fonts/overlock-black-webfont.ttf') format('truetype'), url('../fonts/overlock-black-webfont.svg#overlockblack') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'overlockblack_italic';
-  src: url('../fonts/overlock-blackitalic-webfont.eot');
-  src: url('../fonts/overlock-blackitalic-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/overlock-blackitalic-webfont.woff2') format('woff2'), url('../fonts/overlock-blackitalic-webfont.woff') format('woff'), url('../fonts/overlock-blackitalic-webfont.ttf') format('truetype'), url('../fonts/overlock-blackitalic-webfont.svg#overlockblack_italic') format('svg');
+  font-family: 'oswaldregular';
+  src: url('../fonts/oswald-regular-webfont.eot');
+  src: url('../fonts/oswald-regular-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/oswald-regular-webfont.woff2') format('woff2'), url('../fonts/oswald-regular-webfont.woff') format('woff'), url('../fonts/oswald-regular-webfont.ttf') format('truetype'), url('../fonts/oswald-regular-webfont.svg#oswaldregular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -390,7 +383,7 @@ body {
   background: url('../images/bg-cas.jpg') no-repeat;
   background-size: 100%;
   color: #48453f;
-  font-family: "overlockregular", Arial, sans-serif;
+  font-family: Arial, sans-serif;
   font-size: 13px;
 }
 h1,
@@ -399,9 +392,10 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "overlockblack_italic", Arial, sans-serif;
+  font-family: "oswaldregular", Arial, sans-serif;
   font-weight: normal;
   text-align: left;
+  text-transform: uppercase;
 }
 ul,
 ol {
@@ -413,8 +407,8 @@ a {
 .btn {
   border: 0;
   display: inline-block;
-  font-family: "overlockblack", Arial, sans-serif;
   font-size: 18px;
+  font-weight: bold;
   padding: 15px 40px;
   text-align: center;
   text-decoration: none;
@@ -430,43 +424,18 @@ a {
   height: 145px;
 }
 #header {
-  background: #fff;
-  margin: 0 0 100px;
-}
-#header .container {
-  margin: 0 auto;
-  overflow: hidden;
-  width: 1140px;
-}
-#header .header-top {
-  padding: 10px 0;
-}
-#header .header-top .container {
-  position: relative;
+  color: #FFF;
 }
 #header .logo-site {
-  font-family: "overlockblack", Arial, sans-serif;
-  font-size: 18px;
-  float: left;
-  margin: 0;
+  font-family: "arapeyregular", Arial, sans-serif;
+  font-size: 42px;
+  font-weight: normal;
+  text-align: center;
+  text-transform: none;
 }
 #header .logo-site img {
-  margin-right: 30px;
-  vertical-align: middle;
-}
-#header .logos {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
-}
-#header .logos img {
-  vertical-align: baseline;
-}
-#header .logos img + img {
-  margin-left: 35px;
+  display: block;
+  margin: 0 auto 20px;
 }
 #content .form-block {
   background: #fff;
@@ -475,7 +444,7 @@ a {
 }
 #content .form-block h2 {
   border-bottom: 1px solid #dcd9d3;
-  color: #7f0048;
+  color: #aa4646;
   font-size: 24px;
   margin-top: 0;
 }
@@ -484,6 +453,7 @@ a {
   margin-top: 0;
 }
 #content .form-block label {
+  font-family: "arapeyregular", sans-serif;
   font-size: 16px;
   display: inline-block;
   padding: 0 20px 0 0;
@@ -492,7 +462,7 @@ a {
   border: 1px solid #dcd9d3;
   border-radius: 0;
   padding: 10px 12px;
-  width: 275px;
+  width: 280px;
 }
 #content .form-block .form-signin,
 #content .form-block .form-signup,
@@ -507,7 +477,7 @@ a {
   margin: 10px 0;
 }
 #content .form-block .form-signin .btn {
-  background: #7f0048;
+  background: #aa4646;
   color: #fff;
   margin: 10px 0 0;
   display: block;
@@ -516,6 +486,9 @@ a {
 #content .form-block .form-signup {
   overflow: hidden;
 }
+#content .form-block .form-signup p {
+  font-weight: bold;
+}
 #content .form-block .form-signup .btn {
   background: #48453f;
   color: #fff;
@@ -523,10 +496,20 @@ a {
 }
 #content .form-block .form-bottom {
   background: #efeeec;
-  font-family: "overlockblack", Arial, sans-serif;
-  font-size: 15px;
+  color: #6b453c;
+  font-family: "oswaldregular", Arial, sans-serif;
+  font-size: 18px;
   position: relative;
   text-transform: uppercase;
+}
+#content .form-block .form-bottom:before {
+  background: url('../images/bg-form-cas.png') repeat-x;
+  content: '';
+  height: 10px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 100%;
 }
 #content .form-block .form-bottom ul {
   padding: 0 0 0 90px;
@@ -551,7 +534,8 @@ a {
   vertical-align: middle;
 }
 #footer {
-  background: #e9dec7;
+  background: #48453f;
+  color: #fff;
   height: 145px;
   line-height: 145px;
   text-align: center;
