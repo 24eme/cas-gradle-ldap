@@ -7,27 +7,47 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
-<html lang="en">
+<!--[if lte IE 6 ]><html class="no-js ie6 ielt7 ielt8 ielt9" lang="fr"><![endif]-->
+<!--[if IE 7 ]><html class="no-js ie7 ielt8 ielt9" lang="fr"><![endif]-->
+<!--[if IE 8 ]><html class="no-js ie8 ielt9" lang="fr"><![endif]-->
+<!--[if IE 9 ]><html class="no-js ie9" lang="fr"><![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="fr"><!--<![endif]-->
+
 <head>
-  <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <title>CAS &#8211; Central Authentication Service</title>
-
+	<title>
+		Espace Conseil Interprofessionnel des Vins d'Alsace
+	</title>
+	
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="author" content="Actualys" />
+	<meta name="description" content="CIVA - Conseil Interprofessionnel des Vins d'Alsace" /> 
+	<meta name="robots" content="index,follow" />
+	<meta name="content-language" content="fr-FR" /> 
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="_csrf" content="${_csrf.token}"/>
     <meta name="_csrf_header" content="${_csrf.headerName}"/>
 
+	
+	<link rel="stylesheet" type="text/css" href="css/main.css" media="all" />
 
-    <spring:theme code="standard.custom.css.file" var="customCssFile" />
-    <link rel="stylesheet" href="<c:url value="${customCssFile}" />" />
-    <link rel="icon" href="<c:url value="/favicon.ico" />" type="image/x-icon" />
-
+	
 </head>
-<body id="cas">
 
-<div id="container">
-  <header>
-    <a id="logo" href="http://www.apereo.org" title="<spring:message code="logo.title" />">Apereo</a>
-    <h1>Central Authentication Service (CAS)</h1>
-  </header>
-  <div id="content">
+<body role="document">
+
+
+	<!-- #page -->
+	<div id="page">
+
+		<!-- #header -->
+		<header id="header" class="container" role="banner">
+			<h1><img src="images/logo.png" alt="Conseil Interprofessionnel des Vins d'Alsace" /></h1>
+			<p>L’espace des professionnels du Vignoble d’Alsace</p>			
+		</header>
+		<!-- end #header -->
+
+		<!-- #main -->
+		<section id="main" class="container" role="main">
+			<div class="row">
+
