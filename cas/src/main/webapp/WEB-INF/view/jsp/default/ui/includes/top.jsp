@@ -19,7 +19,7 @@
 -->
                 <link rel="icon" href="<c:url value="/favicon.ico" />" type="image/x-icon" />
 	</head>
-	<body>
+	<body style="background-color: #9aa49f;">
 		<div id="page">
 			<header id="header">
 				<div class="header-top">
