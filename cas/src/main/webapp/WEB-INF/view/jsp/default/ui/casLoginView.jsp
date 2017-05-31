@@ -9,7 +9,7 @@
 <div class="box" id="login">
     <form:form method="post" id="fm1" commandName="${commandName}" htmlEscape="true" class="form-signin">
 
-	<h2>Espace adhérents</h2>
+	<h2>Espace professionnel</h2>
         <form:errors path="*" id="msg" cssClass="errors form-signin" element="div" htmlEscape="false" style="text-align: left"/>
 	<h3>Entrez votre identifiant et votre mot de passe :</h3>
 
@@ -64,11 +64,11 @@
 </div>
 					<div class="form-signup">
 						<h3>Première connexion :</h3>
-			
+
 						<p>
 							S'il s'agit de votre première connexion, munissez vous de votre identifiant et du code de création à 4 chiffres de création reçus par courrier :
 						</p>
-			
+
 						<a href="https://declaration.ivbdpro.fr/teledeclarant/code_creation" class="btn">Créer votre compte</a>
 					</div>
 <jsp:directive.include file="includes/bottom.jsp" />

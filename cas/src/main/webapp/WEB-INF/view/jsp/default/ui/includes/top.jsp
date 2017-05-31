@@ -19,13 +19,13 @@
 -->
                 <link rel="icon" href="<c:url value="/favicon.ico" />" type="image/x-icon" />
 	</head>
-	<body style="background-color: #72727e;">
+	<body>
+  	<div id="parentpage">
 		<div id="page">
 			<header id="header">
 				<h1 class="logo-site">
 					<img src="images/logo-site.png" alt="Interprofession des Vins de Bergerac et Duras" />
-					Espace des Professionels des vins de Bergerac et Duras
 				</h1>
 			</header>
-			<div id="content" style="min-height: 500px">
+			<div id="content" style="min-height: 850px">
 				<div class="form-block">
