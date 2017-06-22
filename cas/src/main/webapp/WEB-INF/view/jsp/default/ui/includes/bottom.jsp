@@ -2,7 +2,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 					<div class="form-bottom">
 						<ul>
-							<li>Enregistrez vos contrats en ligne</li>
 							<li>Déclarez vos drm</li>
 						</ul>
 					</div>

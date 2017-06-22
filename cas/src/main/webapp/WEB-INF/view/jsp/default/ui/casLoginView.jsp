@@ -66,7 +66,7 @@
 						<h3>Première connexion :</h3>
 
 						<p>
-							S'il s'agit de votre première connexion, munissez vous de votre identifiant et du code de création à 4 chiffres de création reçus par courrier :
+							S'il s'agit de votre première connexion, munissez vous de votre identifiant et du code de création à 4 chiffres reçus par courrier :
 						</p>
 
 						<a href="https://declaration.ivbdpro.fr/teledeclarant/code_creation" class="btn">Créer votre compte</a>
