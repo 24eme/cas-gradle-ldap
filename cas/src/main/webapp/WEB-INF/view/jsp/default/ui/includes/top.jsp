@@ -7,7 +7,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <html lang="fr">
 	<head>
-		<title>Espace interprofessionnel des vins de Bergerac et Duras</title>
+		<title>Espace interprofessionnel des vins du Centre Loire</title>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.css" media="screen" />
