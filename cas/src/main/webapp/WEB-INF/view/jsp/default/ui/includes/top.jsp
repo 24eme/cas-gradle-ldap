@@ -33,7 +33,7 @@
       <script type="text/javascript" src="AVA/js/lib/respond.min.js"></script>
     <![endif]-->
 </head>
-<body class="home_auth" role="document">
+<body class="home_auth" role="document" style="background-color: #6a7154;">
 <!-- ####### PLEASE KEEP ####### -->
 <!--[if lte IE 7 ]>
 <div id="message_ie">
