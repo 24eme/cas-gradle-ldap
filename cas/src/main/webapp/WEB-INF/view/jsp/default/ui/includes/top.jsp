@@ -5,37 +5,58 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<html lang="fr">
-	<head>
-		<title>Espace des professionnels des vins et spiritueux du Sud-ouest</title>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" type="text/css" href="css/bootstrap.css" media="screen" />
-                <meta name="_csrf" content="${_csrf.token}"/>
-                <meta name="_csrf_header" content="${_csrf.headerName}"/>
+<!DOCTYPE html>
+<!-- ####### PLEASE KEEP ####### -->
+<!--[if lte IE 6 ]><html class="no-js ie6 ielt7 ielt8 ielt9" lang="<?php echo LANG; ?>"><![endif]-->
+<!--[if IE 7 ]><html class="no-js ie7 ielt8 ielt9" lang="<?php echo LANG; ?>"><![endif]-->
+<!--[if IE 8 ]><html class="no-js ie8 ielt9" lang="<?php echo LANG; ?>"><![endif]-->
+<!--[if IE 9 ]><html class="no-js ie9" lang="<?php echo LANG; ?>"><![endif]-->
+<!--[if gt IE 9]><!-->
+<html class=" js flexbox flexboxlegacy canvas canvastext no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg svgclippaths adownload contenteditable csscalc no-display-runin lastchild cssfilters mediaqueries display-table pointerevents no-shapes no-regions classlist dataset datalistelem filereader placeholder fullscreen formvalidation no-ie8compat json raf svgfilters bgpositionshorthand contextmenu boxsizing desktop portrait datauri" style="" lang="&lt;?php echo LANG; ?&gt;"><!--<![endif]--><!-- ####### PLEASE KEEP ####### --><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Portail de l'association des viticulteurs d'Alsace</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="author" content="24ème">
+    <meta name="description" content="">
+    <meta name="robots" content="index,follow">
+    <meta name="content-language" content="fr-FR">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="images/favico.ico">
+    <link rel="icon" type="image/x-icon" href="images/favico.ico">
+    <link rel="icon" type="image/png" href="images/favico.png">
+    <link rel="stylesheet" type="text/css" href="css/compile.css" media="all">
+    <link href="css/css.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/modernizr-2.js"></script>
+    <script type="text/javascript" src="js/device.js"></script>
+    <!--[if lt IE 9]>
+      <script type="text/javascript" src="AVA/js/lib/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="home_auth" role="document">
+<!-- ####### PLEASE KEEP ####### -->
+<!--[if lte IE 7 ]>
+<div id="message_ie">
+    <div class="gabarit">
+        <p><strong>Vous utilisez un navigateur obsolète depuis près de 10 ans !</strong> Il est possible que l'affichage du site soit fortement altéré par l'utilisation de celui-ci.</p>
+    </div>
+</div>
+<![endif]-->
+<!-- ####### PLEASE KEEP ####### -->
+<!-- #page -->
+<div id="page" class="container">
 
-<!--                <spring:theme code="standard.custom.css.file" var="customCssFile" />
-                <link rel="stylesheet" href="<c:url value="${customCssFile}" />" />
--->
-                <link rel="icon" href="<c:url value="/favicon.ico" />" type="image/x-icon" />
-	</head>
-	<body style="background-color: #9aa49f;">
-		<div id="page">
-			<header id="header">
-				<div class="header-top">
-					<div class="container">
-						<h1 class="logo-site">
-							<img src="images/logo-site.png" alt="France sud ouest. Les vins à découvrir." />
-							Espace des professionnels des vins et spiritueux du Sud-ouest
-						</h1>
+    <div id="bg-page">
+        <img src="images/bg_global.jpg" alt="">
+    </div>
 
-						<div class="logos">
-							<img src="images/logo-armagnac.png" alt="Armagnac" />
-							<img src="images/logo-floc.png" alt="Floc de Gascogne" />
-							<img src="images/logo-cahors.png" alt="Cahors A.O.C" />
-						</div>
-					</div>
-				</div>
-			</header>
-			<div id="content" style="min-height: 500px">
-				<div class="form-block">
+    <!-- #header -->
+    <header id="header" class="container" role="banner">
+        <div id="logo">
+            <a href="https://www.syndicat-cotesdurhone.com/" title="Syndicat des Cotes du Rhone | Retour à la page d'accueil">
+                <img src="images/logo_site.png" alt="Syndicat des Cotes du Rhone">
+            </a>
+        </div>
+        <h1>Espace professionnel<br/>Syndicat-CotesDuRhone.com</h1>
+    </header>
+<!-- #content -->
