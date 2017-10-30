@@ -20,9 +20,6 @@
 --%>
 <%@ page contentType="text/html; charset=UTF-8" %>
 <jsp:directive.include file="includes/top.jsp" />
-<!-- #content -->
-<section id="content" class="container">
-    <div class="row">
         <div class="col-xs-6 first-connection">
             <div class="row">
                 <div class="col-xs-10 col-xs-offset-1">
@@ -30,7 +27,7 @@
                     <h2 class="h3">Première connexion</h2>
 
                     <p>
-                        S'il s'agit de votre première connexion, munissez-vous de votre numéro d'adéhrent et du code de création à 4 chiffres que vous avez reçu par courrier.
+                        S'il s'agit de votre première connexion, munissez-vous de votre numéro d'adhérent et du code de création à 4 chiffres que vous avez reçu.
                     </p>
 
                     <div class="row">
@@ -125,7 +122,4 @@
                 </div>
             </div>
         </div>
-    </div>
-</section>
-<!-- end #content -->
 <jsp:directive.include file="includes/bottom.jsp" />

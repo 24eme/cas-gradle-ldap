@@ -1,6 +1,8 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+</div>
+</section>
+<!-- end #content -->
         <!-- #footer -->
         <footer id="footer" class="container" role="contentinfo">
             <nav role="navigation">

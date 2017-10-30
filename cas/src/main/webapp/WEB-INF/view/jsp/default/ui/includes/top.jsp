@@ -14,7 +14,7 @@
 <!--[if gt IE 9]><!-->
 <html class=" js flexbox flexboxlegacy canvas canvastext no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg svgclippaths adownload contenteditable csscalc no-display-runin lastchild cssfilters mediaqueries display-table pointerevents no-shapes no-regions classlist dataset datalistelem filereader placeholder fullscreen formvalidation no-ie8compat json raf svgfilters bgpositionshorthand contextmenu boxsizing desktop portrait datauri" style="" lang="&lt;?php echo LANG; ?&gt;"><!--<![endif]--><!-- ####### PLEASE KEEP ####### --><head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <title>Portail de l'association des viticulteurs d'Alsace</title>
+    <title>Portail Syndicat des Côtes du Rhône</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="author" content="24ème">
@@ -57,6 +57,8 @@
                 <img src="images/logo_site.png" alt="Syndicat des Cotes du Rhone">
             </a>
         </div>
-        <h1>Espace professionnel<br/>Syndicat-CotesDuRhone.com</h1>
+        <h1>Espace professionnel<br/>Syndicat<span class="highlight">-</span>CotesDuRhone<span class="highlight">.</span>com</h1>
     </header>
 <!-- #content -->
+<section id="content" class="container">
+    <div class="row">
