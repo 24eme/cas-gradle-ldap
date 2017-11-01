@@ -79,8 +79,9 @@
 
                         <div class="form-group">
                             <div class="col-xs-offset-8 col-xs-4">
-                                <input type="hidden" name="lt" value="${flowExecutionKey}" />
-                                <input type="hidden" name="_eventId" value="submit" />
+                              <input type="hidden" name="lt" value="${loginTicket}" />
+                              <input type="hidden" name="execution" value="${flowExecutionKey}" />
+                              <input type="hidden" name="_eventId" value="submit" />
                                 <button class="btn btn-default btn-block btn-lg" type="submit">Valider</button>
                             </div>
                         </div>

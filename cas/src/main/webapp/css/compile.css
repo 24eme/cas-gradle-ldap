@@ -1183,7 +1183,7 @@ div.date-picker div.input-group-addon{cursor:pointer}
 .icon_clipboard:before{content:"\e0e6"}
 h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6{font-weight:600}
 h3,.h3,h2,.h2{color:#9f0038}
-#msg{paggin-left: 20px}
+#msg{padding-left: 20px}
 #header .highlight {color: #9f0038; font-weight: bold; }
 .h2-border{border-bottom:1px solid #c5c3c3;margin:0 0 20px;padding:0 0 15px}
 .table{color:#222;font-size:14px}.table tbody{background:#fff}
