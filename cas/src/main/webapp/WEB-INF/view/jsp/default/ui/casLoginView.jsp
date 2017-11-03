@@ -31,7 +31,7 @@
                     </p>
 
                     <div class="row">
-                        <div class="col-xs-7 col-xs-offset-5">
+                        <div class="col-md-7 col-md-offset-5">
                             <a href="https://declaration.syndicat-cotesdurhone.com/teledeclarant/code_creation" class="btn btn-default btn-block btn-lg">Créer votre compte</a>
                         </div>
                     </div>
@@ -78,7 +78,7 @@
                         </div>
 
                         <div class="form-group">
-                            <div class="col-xs-offset-8 col-xs-4">
+                            <div class="col-md-offset-8 col-md-4">
                               <input type="hidden" name="lt" value="${loginTicket}" />
                               <input type="hidden" name="execution" value="${flowExecutionKey}" />
                               <input type="hidden" name="_eventId" value="submit" />
