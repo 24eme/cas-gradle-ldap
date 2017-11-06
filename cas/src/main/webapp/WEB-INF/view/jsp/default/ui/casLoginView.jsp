@@ -20,7 +20,7 @@
 --%>
 <%@ page contentType="text/html; charset=UTF-8" %>
 <jsp:directive.include file="includes/top.jsp" />
-        <div class="col-xs-6 first-connection">
+        <div class="col-md-6 first-connection">
             <div class="row">
                 <div class="col-xs-10 col-xs-offset-1">
 
@@ -31,14 +31,14 @@
                     </p>
 
                     <div class="row">
-                        <div class="col-xs-7 col-xs-offset-5">
-                            <a href="https://declaration.syndicat-cotesdurhone.com/compte" class="btn btn-default btn-block btn-lg">Créer votre compte</a>
+                        <div class="col-md-7 col-md-offset-5">
+                            <a href="https://declaration.syndicat-cotesdurhone.com/teledeclarant/code_creation" class="btn btn-default btn-block btn-lg">Créer votre compte</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-xs-6 space-member">
+        <div class="col-md-6 space-member">
             <div class="row">
                 <div class="col-xs-10 col-xs-offset-1">
                     <h2 class="h3">Espace adhérent</h2>
@@ -78,7 +78,7 @@
                         </div>
 
                         <div class="form-group">
-                            <div class="col-xs-offset-8 col-xs-4">
+                            <div class="col-md-offset-8 col-md-4">
                               <input type="hidden" name="lt" value="${loginTicket}" />
                               <input type="hidden" name="execution" value="${flowExecutionKey}" />
                               <input type="hidden" name="_eventId" value="submit" />
@@ -98,7 +98,7 @@
         </div>
 
         <div class="row">
-            <div class="col-xs-6">
+            <div class="col-md-6">
                 <div class="module module-declarations">
                     <h3>Un module <br>de saisie des déclarations</h3>
 
@@ -108,7 +108,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-xs-6" style="position:relative;">
+            <div class="col-md-6" style="position:relative;">
                 <div class="module module-bibliotheque">
                     <h3>Une bibliothèque de documents téléchargables</h3>
 
