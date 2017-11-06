@@ -58,7 +58,7 @@
                                 </c:if>
                                 <c:if test="${empty sessionScope.openIdLocalId}">
                                     <spring:message code="screen.welcome.label.netid.accesskey" var="userNameAccessKey" />
-                                    <form:input cssClass="required form-control" cssErrorClass="error" id="username" size="25" tabindex="1" placeholder="Votre N° CVI" accesskey="${userNameAccessKey}" path="username" autocomplete="false" htmlEscape="true" />
+                                    <form:input cssClass="required form-control" cssErrorClass="error" id="username" size="25" tabindex="1" placeholder="Votre n° d'adhérent" accesskey="${userNameAccessKey}" path="username" autocomplete="false" htmlEscape="true" />
                                 </c:if>
                             </div>
                         </div>
