@@ -7,8 +7,6 @@
         <footer id="footer" class="container" role="contentinfo">
             <nav role="navigation">
                 <ul>
-                    <li><a href="https://declaration.syndicat-cotesdurhone.com/contact">Contact</a></li>
-                    <li><a href="https://declaration.syndicat-cotesdurhone.com/mentions-legales">Mentions légales</a></li>
                 </ul>
             </nav>
         </footer>
