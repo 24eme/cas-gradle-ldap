@@ -67,7 +67,7 @@
                             <label class="col-xs-4 control-label" for="password">Mot de passe :</label>
                             <div class="col-xs-8">
                                 <spring:message code="screen.welcome.label.password.accesskey" var="passwordAccessKey" />
-                                <form:password cssClass="required form-control" cssErrorClass="error" id="password" size="25" tabindex="2" placeholder="Le même que sur Vinsalsace.pro" path="password"  accesskey="${passwordAccessKey}" htmlEscape="true" autocomplete="off" />
+                                <form:password cssClass="required form-control" cssErrorClass="error" id="password" size="25" tabindex="2" placeholder="Mot de passe défini à la création" path="password"  accesskey="${passwordAccessKey}" htmlEscape="true" autocomplete="off" />
                             </div>
                         </div>
 
