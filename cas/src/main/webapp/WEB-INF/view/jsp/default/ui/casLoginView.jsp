@@ -105,7 +105,6 @@
                     <ul>
                         <li>Déclaration <br>de Revendication<br/><br/></li>
                         <li>Déclaration <br>d'Affectation Parcellaire<br/><br/></li>
-                        <li>Déclaration de Tirage</li>
                     </ul>
                 </div>
             </div>
