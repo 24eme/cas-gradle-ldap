@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+
+
+
+
+
+
+<html lang="fr">
+	<head>
+		<title>Espace interprofessionnel des vins de Bergerac et Duras</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css" media="screen" />
+                <meta name="_csrf" content=""/>
+                <meta name="_csrf_header" content=""/>
+
+<!--                
+                <link rel="stylesheet" href="/cas_ivbd/css/cas.css" />
+-->
+                <link rel="icon" href="/cas_ivbd/favicon.ico" type="image/x-icon" />
+	</head>
+	<body style="background-color: #72727e;">
+		<div id="page">
+			<header id="header">
+				<h1 class="logo-site">
+					<img src="images/logo-site.png" alt="Interprofession des Vins de Bergerac et Duras" />
+					Espace des Professionels des vins de Bergerac et Duras
+				</h1>
+			</header>
+			<div id="content" style="min-height: 500px">
+				<div class="form-block">
+
+
+<div id="cookiesDisabled" class="errors" style="display:none;">
+    <h2>Cookies navigateur désactivés</h2>
+    <p>Votre navigateur ne supporte pas les cookies. L'authentification centralisée NE FONCTIONNERA PAS.</p>
+</div>
+
+<div class="box" id="login">
+    <form id="fm1" class="form-signin" action="/cas_ivbd/login?service=https://declaration.ivbdpro.fr/" method="post">
+
+	<h2>Espace adhérents</h2>
+        
+	<h3>Entrez votre identifiant et votre mot de passe :</h3>
+
+        <section class="row">
+            <label for="username"><span class="accesskey">I</span>dentifiant:</label>
+            
+                
+                
+                    
+                    <input id="username" name="username" class="required" tabindex="1" accesskey="i" type="text" value="" size="25" autocomplete="off"/>
+                
+            
+        </section>
+
+        <section class="row">
+            <label for="password"><span class="accesskey">M</span>ot de passe:</label>
+                
+            
+            <input id="password" name="password" class="required" tabindex="2" accesskey="m" type="password" value="" size="25" autocomplete="off"/>
+            <span id="capslock-on" style="display:none;"><p><img src="images/warning.png" valign="top"> la touche Verr Maj est activée !</p></span>
+        </section>
+
+<!--
+         <section class="row check">
+                <input type="checkbox" name="rememberMe" id="rememberMe" value="true" tabindex="5"  />
+                <label for="rememberMe">Se souvenir de moi</label>
+        </section>
+-->
+
+            <input type="hidden" name="lt" value="LT-3032-am17LGzs3dIFFpRGFOaB-cas01.example.org" />
+            <input type="hidden" name="execution" value="cbc336db-422c-4644-ae06-dfb3fc3327ca_ZXlKaGJHY2lPaUpJVXpVeE1pSjkuT1hKa1dtWk1kRVJ2ZGpGVWNXWmtlamR6ZW1weVNIVXpTa2hZVVdOMGNuWTVkMDVrVVdsaWVuUlVkVlZEYVVRclIyNXhRa0ZWVVVJelVWVnVNVmRrZFZKYWQzUm9URXBNYlhWWGJGZDVkblJuV0dseVRIWnRNbmhNUm1kNVZrMHlSblJQWjJWc2MzRTJaVmRNTldselYyOWxlRVZEY0V4MVVsTmFjMVJ1VVhwU01ISkpZeXRVVGtNeVEybE5jSFZwSzNNcldXYzRTRWgwUVdvNFlVWTJUemcwWVhkQ1ZrcE1PSGM0V1hScmRrNVNhVGxYUVRSVVZqZFpXa3RrWkVObGQwcEJVRkEyTW01dmJrZFFWV3RqVDNSVlZTc3lVVFJUYm5oV1YxSlFZMGR4U0ROa1ZHVXZNWEZuUkVaRU0yUnBNMEkyVmxWcE5pOXNabVZEWWxGSWRYUk5hbVI0ZVVScU9GZFZOekV4YVhWNVRWQldNVmxuTW14SFpUaElhMjVxVld3elZqbHJZV00yYnpsV2VrTmhPV05CZEhWTlVHZ3ZPVXhIVWxremFFcG9lVW9yVVZwSGFIbzFiV1E1Y21Rd1NXMWFVMkUyVlVkSVZuQkNiMUJTWW5CQ1EwbERVbGhCVWpGTVYyZHJTVTVLZVZodmFtRjZNVVZaWkM5WllXdHNXVlppY1doMmRYVk5laTlQVW5NMFVFeGpVVVZVWjA5NldXNUdlVkZFUjFKeWJFZFpOelpqU2s1Vk1IVndibHBxZW1WWFJFZHBXVE41UVVFNFkwSXZaamRYVVdsTE1qVXdTVVZTUTBGQmQydHFaakF5V25KNlIwMVhZMlV4ZDI1eFJXcHZaV053Y0ZkeU5VaFVabGhMZWxKWFFuTmFOemxWYVRWSlZHMU5hekZUYmpKR09HRkZaSEYxYkhvdlYwMHdSazV4YVRCVlIyeE1VMmt2UVc0NE5VTktWVTVzWlc5alRIcG1Za2gzTkc5elNqaDNOMWRVTWxNMVUxQnBOakpYZERoV1ZFNUZjWFpvVkhCclMwVlRNbGxTUW05bVNXOHpaMlZ3TlUwM1RYWTRabUpNWmxvdlVVWTRORGhHWjJkc1EwSmhTWGwzVGpVMmJUQm5MemRXTTBobU1GVkZSVkpzTjAweVRVaElSM1V2TkdsRmNHZE5UMlpCYkRoSE1HUnBNV1JWT0dkcVRtcEVVSFF2U1hSTGQwMDJTMnczY1hVeFJtdHFaM1FyWnpCVEswdFhWMEZuWVZwbFZsUjZkekZRV1c5cFJHUkRNMHBTVkZBd1JtOHlka2xHUW5SbVdEQldZMWhhYmtRNU5YQnNRV3BWZGtGc01UbHBWbWRrVEdOdU5ETnhWRkJ6Y1N0RVZ6Wm5jVFk0Tld4SVoxbDVOR2MyV25kdFNHRXlVRVpRTjB4TE1VVkJjM1ZCUTBoeVpFVXJTVE5YUlRSRFpqWmhWa0pIZFdsYWJFSkxkRUkzYzBsa1FsZFRjSEJYT1hCVVZYUkZkMlpTVjFwM1p6aGhjREowYVZkeVVtcEpOWFE1VUZsMFdFaFlZa1JSS3pkcFMwcGtaWGQ0SzFSdU9EbE9ia2R0UzBJeWEyRnFWbkZ5UjJ4WVduaFdabXBCTkZCclZrSkJTbFZUT0d0TVR6SkZTMDFTTW5aaVRFSkJlakUzWTFkVWNrZHpPV2x2WjA4emFESmxVV2R0YnpkUVMzaENOa1ZJWlRJM1lqaEhjV3B6ZEdKQk9HTnhUMVF4ZERWb1oySXdTM2xQU0RkNmRISnNlV3h4V25Oak5GRk5VVGxzZGsxRGQxQlhSMVpuV1hrMlNTczBiRUpFUjNnMWNraFZVVGxHTjNGaVQxQjFlR1I2VDFGdVJ5dFRPWGt4Y2xweVZqUjNRakZRTWxWd1pqSk9PVVJSYm5SU1ZHMUhWR3RVTnpaeWRua3hTVk5YZERSRU1IZFhiVk5rYzNOSVJVVkpZVlZOZHpNNVZuRkZjbFJ2TmxndlNVVk1NVGcyY3psMVVVZFVSWEI1WlhaRk1WcEpkVWRaYjNGTlVVUTJXamRUWm1relRWQkpkSGxKYVVKeU1uaEVhelZwVFRsVWJFNUZVazFIZFVRdmJGbHpPVk5qZWpGUFQycFlibkpFV25CWmVrVTNaRk5GVTNRMk1XZGlUazgxYTNaR2JrUlhWVEJYV0VoelVrRmllVTlQVkRkcVRqUk1lRGg2UzJWSk1DdDNkRzFCVjNjMFoyRTBaVkJLVmtkdk5Ea3lZbkp0U21oYVpHcERNVFZWZDJ0dE9FaHpRMmRrUkV0eWVrZzBSR3ROTHpORVdWTlZkazF6VW5wSmNFWXJMMVYxYWpaWU56QmtWMlJVUmxCVk9XSlNRMk5uV2twcWFFMVZiVVZ2U1RaVmExRkxjRlV5YWpkdFptSmtWMDh5U2twd2FFa3lkWEEzTmpoVWJtTmpRM0IyY1RaTGJGQnFWelJ2VnpGM2FWSm1jbll4V2xZMVkzWmxkV2xoWkZaUE5GWktTR0kxYkZaMGFEQnpjVkkzTVhkQk5HbzNVelExUm5CdU5YbHRNbGhCV2tOUlFrZE9TMDlNVEc0MU9VTllkVGxuU0U1dmFtOW5Sell4ZURSclRYTkNhR3B4YXpGVmFHNHZjRlJvTUhSVlVTdG9Ra3hZTjNoYUwwUkNWalo1V1ZSR2NWaDJXVEV6VVN0RlNFVk1ZbmhZWjFkWVozRlpPR3RyYzFZM1NFVmxkMU5DV0ZoWmVIZFdSRXMzU1ZKUmFWTTFRbnBoWVdWMVprVkpObFJoVTBJdlN6SlZVR3gyU1RobVJrMUpTRVpJY1hoNVVuQlViM3BwVUhsTlRWVmhNamRvZG1GT1ZVaGxaSFJGUkdwdFpFSnRiMGRxU0ZFMGNsbEZVamRHWVZoSU9YZHlUalZDY0hBeGNuSnBhMkZFZGpsMFZtUlBaR2htZVdsdVZtVkNRM05aTkVoYVR6VlNiMDVZUWtwcFVsaGpUa3hFYTFCR1MzTnhUazkxUjJacVJGVnphMU50VHpWeU9FRjZhbFJITTBjeFV6RmlWbXBxSzNsUFN6RjZOVmhrTTBWWE4xTnFlRm9yVkZNMllXMW9NRTVqU0doc2JYWm1Za2xXVW5WMVNWcFpXV3c1Y25kNFFXcE1LekZzTlZwc1IzVXZNR2t5WWtzMFFWcExUMVpUVVVKcVMwWllVbmx4TUdGYWIwVmhObGt2TkcwM1RqSnZha3BGZUZkWlkyd3ZlRFl6TlVoTlR6UkRLMEZ1TlZZNVVHa3hhMjEwWVhOcVpuUXJUV0ZwT0RsbVNtaEtXVGhtVlRKdFdETXdkbTFXTm1KVVoyd3ZZMWhXVXpkM1VEazVaR3BzY0ROVmRuTldVMWtyZWxSbmIwWlpXbkpHZUUxMFdIWTJPSE53WWpGQ00yWlhURE42V1N0bWNYaEVPRzFYUnpSV1FtcDFOVlJLU1hoRWNUaFFiRlJXTlhCUmFtOUVZMEY0T0dkclkycHNiMjFrYkhoS05VUjVibVpoTUhabWNraFRZMVV3TlVSeFNVRlFhVUUwUkhOdmVGWldRakJtYjFCeWFXcFJOMjltZVhkSk9VcElNVkpHY25Sa1pXVjZLMUpNYlVkVFVUSTRjbVl3Ym5CcU16QnBhSFprU1U1dVducG5TR2RCU2tGM1lpOVpXRkF3WjNoa1V6QmphbFZRYkdaNVJ6UXhLM0V4UlZaSk5DOURWVzQzSzFSbFJsSkJSeXRKTTJGUGRqQTBhRUpTWkRkTFpXY3JNVlJJTlRaMFkyWjRZa3gxZVVwTE9XVTFWbmxZVW5KeE1WbHRWV2xVU2tGVVIybEpVa0psV1RodU1rYzNaVkZhY1d0UU1rVXlhSGRTTDJsNFFrbFRiVTA1YlZkWE5TdDZTM2xtUW10b2JsVmhjVllyYTFGU1ZuaENaMGRHY0VZMGRGTmliM2M1WWpZeVVGSndZekp2ZEdNNFRtUjFTMHN3UjBkSlkwWkhLelpDVVVkSFZ6WldVbU5IY0VaR01qQTVUa1ZMTDJoaWNDdHFZM2czWlU5SVJGSnNXVk5FZFhwRFJURllWbmc0TTJWd1p5czNaSEI1T0VKVVJDOHlNbE50WWs5blJubFNjazhyV2tOMFRsVkhibVJ2T0dWQlFVVnJPSE53Ylhaa1VHcFBZekpLU1VkUUszUnpSbkkyT0VOR1ZVa3hhV1JtUkZOT1pVVjVWVkE0WkhZMWNFY3JjbW94U210R01qWXJZMHhHUkVvdmMxTlFSRTl3SzBWWmVFaHFlRVpxYnpWdWNIbGllbXhCU0dkNVdqUklSSGxVYjFrclpqVlVZVzlLV1VkdVZIcExNa1JYYzFSS2NsZDFXWEl6THl0S1RuVkxaV1IzVFV4MlVtMXRjM0pzU1VNNWRYSklVMkpyTWpjeU1rMXpRVVJyU0hKNFJtdDZVRmRwTmk5V2VXTkJLMjVMVmpKVldHOXpXWEJ0TTNwRGNrUXJZakZPV1QwLmpId2ZzX1NVMmJZZHcxVklHV19WaTdNOG5iX25GMlVZZ3NuTDJwdks2MHpwYzY1a181cWFEQ2hrbTlWMVQtd1lieUlsT21nSFZySklXbkllcTUxdzdn" />
+            <input type="hidden" name="_eventId" value="submit" />
+
+        <section class="row btn-row">
+            <button class="btn btn-submit" name="submit" accesskey="l" value="SE CONNECTER" tabindex="6" type="submit">Valider</button>
+        </section>
+
+						<p>
+						<a href="https://declaration.ivbdpro.fr/mot_de_passe_oublie">Mot de passe oublié ?</a>
+						</p>
+
+
+    </form>
+</div>
+					<div class="form-signup">
+						<h3>Première connexion :</h3>
+			
+						<p>
+							S'il s'agit de votre première connexion, munissez vous de votre identifiant et du code de création à 4 chiffres de création reçus par courrier :
+						</p>
+			
+						<a href="https://declaration.ivbdpro.fr/teledeclarant/code_creation" class="btn">Créer votre compte</a>
+					</div>
+
+
+					<div class="form-bottom">
+						<ul>
+							<li>Enregistrez vos contrats en ligne</li>
+							<li>Déclarez vos drm</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer id="footer">
+			<nav>
+				<ul>
+					<li><a href="#">Mentions légales</a></li>
+				</ul>
+			</nav>
+		</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headjs/1.0.3/head.min.js"></script>
+
+<script type="text/javascript" src="/cas_ivbd/js/cas.js"></script>
+</body>
+</html>
+
