@@ -1238,7 +1238,7 @@ input[type="checkbox"],input[type="radio"]{width:auto}
 .alert-container{background:#fff;border:1px solid #ddd;border-radius:3px;margin:0 0 20px;padding:20px}
 .alert-container .alert{margin:0}
 #header{background-color:#ffffff; background-image: url('../images/grappe.png'); background-position: right; background-repeat: no-repeat;margin-top: 0px; padding:0px 0;position:relative}
-#header #titre {margin: 10px 160px 0 70px;}
+#header #titre {margin: 10px 150px 0 70px;}
 #header h1 { margin-left: 155px; color: #fff; font-size: 25px; text-align: center;margin: 0; padding: 0;}
 #header #logo{float:left;}
 #navigation{position:absolute;top:0;right:0;bottom:0;left:auto;background:#c50068;color:#fff;padding:10px 20px;text-align:right;width:220px}
@@ -1246,7 +1246,7 @@ input[type="checkbox"],input[type="radio"]{width:auto}
 #navigation ul{font-size:13px;list-style:none}
 #navigation .profile-name{font-size:15px;font-weight:600}
 #content{background:#fff;margin-top:20px;position:relative;padding:0 20px 0px 20px; width: 460px;}
-#content h3 {color: #fff; background-color: #c50068; padding: 10px;margin:0px;font-size: 22px;}
+#content h3 {color: #c50068; padding: 10px;margin:0px;font-size: 22px; border-bottom: 1px #c50068 solid;}
 #content h2 {font-weight: bold;}
 #footer{background:transparent;font-size:13px;margin-bottom:40px;position:relative;text-align:center}#footer ul{display:inline-block;list-style:none;padding:0}.ielt8 #footer ul{display:inline;zoom:1}
 #footer ul li{display:inline-block}.ielt8 #footer ul li{display:inline;zoom:1}
@@ -1259,31 +1259,24 @@ input[type="checkbox"],input[type="radio"]{width:auto}
 .space-member label{text-align:right}
 .space-member .forgotten-password{font-size:13px;font-weight:600;text-decoration:underline}
 ul.list-group-history{padding:0}ul.list-group-history a{padding-right:0}
-.presentation-services{text-align:center}
-.presentation-services h3{color:#c50068;margin-top:0;margin-bottom:20px;text-transform:uppercase}
-.presentation-services .presentation-title{background:#c50068;margin:0 0 0px;padding:25px 65px;position:relative;text-align:center}
-.presentation-services .presentation-title::before{
+.presentation h2 { background-color: #c50068; color: #fff; text-align: center; padding: 40px; margin: 0;}
+.presentation {margin-bottom: 25px;}
+.presentation .row div::after {
   position:absolute;
-  top:0;
+  top:100%;
   right:0;
-  bottom:100%;left:0;
+  bottom:0;left:0;
   -webkit-transform:rotate(360deg);
   -ms-transform:rotate(360deg);
   transform:rotate(360deg);
   width:0;height:0;
   border-style:inset;border-width:17px 17px 0;
-  border-color:#ffffff transparent transparent;
+  border-color:#c50068 transparent transparent;
   content:'';
   display:inline-block;
   border-top-style:solid;
   margin:0 auto
 }
-.presentation-services .presentation-title h2{color:#fff;font-size:22px;font-weight:400;line-height:1.4;margin:0}
-.presentation-services .module{padding:115px 50px 0;position:relative}
-.presentation-services .module:before{background:url('../images/sprite_global.png') 0 -86px no-repeat;width:98px;height:96px;position:absolute;top:0;right:auto;bottom:auto;left:50%;margin-left:-49px;content:''}
-.presentation-services .module.module-bibliotheque:before{background-position:-97px -86px}
-.presentation-services .module.module-cartographique:before{background-position:-194px -86px}
-.presentation-services .module ul{list-style:none;padding:0}.presentation-services .module ul li{margin:15px 0}
 .datepicker-control{padding:6px 12px;border-radius:14px;background-color:#fff;background-image:none;border:1px solid #ccc;box-shadow:0 1px 1px rgba(0,0,0,0.075) inset;color:#333;display:block;font-size:14px;height:28px;line-height:1.42857;transition:border-color .15s ease-in-out 0,box-shadow .15s ease-in-out 0}
 ul{list-style:none}
 .notification{position:fixed;z-index:999999;bottom:0;left:45%;opacity:.9;display:none}
