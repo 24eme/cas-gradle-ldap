@@ -1246,7 +1246,7 @@ input[type="checkbox"],input[type="radio"]{width:auto}
 #navigation ul{font-size:13px;list-style:none}
 #navigation .profile-name{font-size:15px;font-weight:600}
 #content{background:#fff;margin-top:20px;position:relative;padding:0 20px 0px 20px; width: 460px;}
-#content h3 {color: #fff; background-color: #c50068; padding: 10px;margin:0px;font-size: 22px;}
+#content h3 {color: #c50068; padding: 10px;margin:0px;font-size: 22px; border-bottom: 1px #c50068 solid;}
 #content h2 {font-weight: bold;}
 #footer{background:transparent;font-size:13px;margin-bottom:40px;position:relative;text-align:center}#footer ul{display:inline-block;list-style:none;padding:0}.ielt8 #footer ul{display:inline;zoom:1}
 #footer ul li{display:inline-block}.ielt8 #footer ul li{display:inline;zoom:1}
