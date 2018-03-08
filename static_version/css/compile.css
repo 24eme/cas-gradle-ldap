@@ -1239,16 +1239,18 @@ input[type="checkbox"],input[type="radio"]{width:auto}
 .alert-container .alert{margin:0}
 #header{background-color:#ffffff; background-image: url('../images/grappe.png'); background-position: right; background-repeat: no-repeat;margin-top: 0px; padding:0px 0;position:relative}
 #header #titre {margin: 10px 160px 0 70px;}
-#header h1 { margin-left: 155px; color: #fff; font-size: 25px; text-align: center;margin: 0; padding: 0;}
+#header h1 { margin-left: 155px; color: #fff; font-size: 25px; text-align: center;margin: 20px 0 0 0; padding: 0;}
 #header #logo{float:left;}
 #navigation{position:absolute;top:0;right:0;bottom:0;left:auto;background:#c50068;color:#fff;padding:10px 20px;text-align:right;width:220px}
 #navigation a{color:inherit}
 #navigation ul{font-size:13px;list-style:none}
 #navigation .profile-name{font-size:15px;font-weight:600}
-#content{background:#fff;margin-top:20px;position:relative;padding:0 20px 0px 20px; width: 460px;}
+#content{background:#fff;margin-top:20px; margin-bottom: 50px 0;position:relative;padding:0 20px 0px 20px; width: 460px;}
 #content h3 {color: #c50068; padding: 10px;margin:0px;font-size: 22px; border-bottom: 1px #c50068 solid;}
 #content h2 {font-weight: bold;}
-#footer{background:transparent;font-size:13px;margin-bottom:40px;position:relative;text-align:center}#footer ul{display:inline-block;list-style:none;padding:0}.ielt8 #footer ul{display:inline;zoom:1}
+#footer{background:transparent;font-size:13px;margin-top:40px;position:fixed;bottom:0;width:100%;text-align:center;padding:10px;}
+#footer ul{display:inline-block;list-style:none;padding:0}
+.ielt8 #footer ul{display:inline;zoom:1}
 #footer ul li{display:inline-block}.ielt8 #footer ul li{display:inline;zoom:1}
 #footer ul li+li:before{content:'|';padding:0 15px}
 .home_auth .row{margin:0 -20px}
@@ -1261,7 +1263,7 @@ input[type="checkbox"],input[type="radio"]{width:auto}
 ul.list-group-history{padding:0}ul.list-group-history a{padding-right:0}
 .presentation-services{text-align:center}
 .presentation-services h3{color:#c50068;margin-top:0;margin-bottom:20px;text-transform:uppercase}
-.presentation-services .presentation-title{background:#c50068;margin:0 0 0px;padding:25px 65px;position:relative;text-align:center}
+.presentation-services .presentation-title{background:#c50068;margin:0;padding:25px 65px;position:relative;text-align:center}
 .presentation-services .presentation-title::before{
   position:absolute;
   top:0;
