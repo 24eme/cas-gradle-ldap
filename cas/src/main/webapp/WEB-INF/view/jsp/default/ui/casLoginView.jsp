@@ -20,106 +20,61 @@
 --%>
 <%@ page contentType="text/html; charset=UTF-8" %>
 <jsp:directive.include file="includes/top.jsp" />
-        <div class="col-md-6 first-connection">
-            <div class="row">
-                <div class="col-xs-10 col-xs-offset-1">
-
-                    <h2 class="h3">Première connexion</h2>
-
-                    <p>
-                        S'il s'agit de votre première connexion, munissez-vous de votre numéro d'adhérent et du code de création à 4 chiffres que vous avez reçu.
-                    </p>
-
-                    <div class="row">
-                        <div class="col-md-7 col-md-offset-5">
-                            <a href="https://declaration.syndicat-cotesdurhone.com/teledeclarant/code_creation" class="btn btn-default btn-block btn-lg">Créer votre compte</a>
-                        </div>
+<div class="col-md-12">
+    <div class="row">
+        <div class="col-xs-12">
+            <h3 class="h3">Espace personnel</h3>
+            <div class="col-xs-10 col-xs-offset-1">
+            <p>Entrez votre identifiant et votre mot de passe :</p>
+            <form id="credential" class="form-horizontal" action="/cas/login?service=https://declaration.syndicat-cotesdeprovence.com/" method="post">
+                <div class="form-group">
+                    <label class="col-xs-4 control-label" for="username">Identifiant :</label>
+                    <div class="col-xs-8">
+                            <input id="username" name="username" class="required form-control" tabindex="1" placeholder="Votre n&deg; d&#39;adh&eacute;rent" accesskey="i" type="text" value="" size="25" autocomplete="false"/>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="col-md-6 space-member">
-            <div class="row">
-                <div class="col-xs-10 col-xs-offset-1">
-                    <h2 class="h3">Espace adhérent</h2>
-
-                    <p>Entrez votre identifiant et votre mot de passe :</p>
-
-                    <form:form method="post" cssClass="form-horizontal" commandName="${commandName}" htmlEscape="true">
-
-                        <form:errors path="*" cssClass="alert alert-danger" id="status" element="div" />
-
-                        <div class="form-group">
-                            <label class="col-xs-4 control-label" for="username">Identifiant :</label>
-                            <div class="col-xs-8">
-                                <c:if test="${not empty sessionScope.openIdLocalId}">
-                                    <strong>${sessionScope.openIdLocalId}</strong>
-                                    <input type="hidden" id="username" name="username" value="${sessionScope.openIdLocalId}" />
-                                </c:if>
-                                <c:if test="${empty sessionScope.openIdLocalId}">
-                                    <spring:message code="screen.welcome.label.netid.accesskey" var="userNameAccessKey" />
-                                    <form:input cssClass="required form-control" cssErrorClass="error" id="username" size="25" tabindex="1" placeholder="Votre n° d'adhérent" accesskey="${userNameAccessKey}" path="username" autocomplete="false" htmlEscape="true" />
-                                </c:if>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-xs-4 control-label" for="password">Mot de passe :</label>
-                            <div class="col-xs-8">
-                                <spring:message code="screen.welcome.label.password.accesskey" var="passwordAccessKey" />
-                                <form:password cssClass="required form-control" cssErrorClass="error" id="password" size="25" tabindex="2" placeholder="Mot de passe défini à la création" path="password"  accesskey="${passwordAccessKey}" htmlEscape="true" autocomplete="off" />
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-xs-offset-4 col-xs-8">
-                                <a href="https://declaration.syndicat-cotesdurhone.com/mot_de_passe_oublie" class="forgotten-password">Mot de passe oublié</a>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-offset-8 col-md-4">
-                              <input type="hidden" name="lt" value="${loginTicket}" />
-                              <input type="hidden" name="execution" value="${flowExecutionKey}" />
-                              <input type="hidden" name="_eventId" value="submit" />
-                                <button class="btn btn-default btn-block btn-lg" type="submit">Valider</button>
-                            </div>
-                        </div>
-                    </form:form>
+                <div class="form-group">
+                    <label class="col-xs-4 control-label" for="password">Mot de passe :</label>
+                    <div class="col-xs-8">
+                        <input id="password" name="password" class="required form-control" tabindex="2" placeholder="Mot de passe d&eacute;fini &agrave; la cr&eacute;ation" accesskey="m" type="password" value="" size="25" autocomplete="off"/>
+                    </div>
                 </div>
+                <div class="form-group">
+                    <div class="col-xs-offset-4 col-xs-8">
+                        <a href="https://declaration.syndicat-cotesdeprovence.com/mot_de_passe_oublie" class="forgotten-password">Mot de passe oublié</a>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-8 col-md-4">
+                      <input type="hidden" name="lt" value="" />
+                      <input type="hidden" name="execution" value="" />
+                      <input type="hidden" name="_eventId" value="submit" />
+                        <button class="btn btn-default btn-block btn-lg" type="submit">Valider</button>
+                    </div>
+                </div>
+            </form>
+          </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-12">
+    <div class="row">
+        <div class="col-xs-12">
+            <h3 class="h3">Première connexion</h3>
+            <div class="col-xs-10 col-xs-offset-1">
+            <p>S'il s'agit de votre première connexion, munissez vous de votre identifiant et du code de création à 4 chiffres qui vous a été fournis.</p>
+            <a href="https://declaration.syndicat-cotesdeprovence.com/teledeclarant/code_creation" class="btn btn-default btn-block btn-lg">Créer votre compte</a>
+            <p>&nbsp;</p>
             </div>
         </div>
     </div>
-    <div class="presentation-services">
-        <div class="row">
-            <div class="col-xs-12 presentation-title">
-                <h2>Organisme de Défense et de Gestion (ODG) des AOC Côtes du Rhône et Côtes du Rhône Villages, le Syndicat général a développé un espace sécurisé où les vignerons peuvent effectuer facilement certaines déclarations.</h2>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-6">
-                <div class="module module-declarations">
-                    <h3>Un module <br>de saisie des déclarations</h3>
-
-                    <ul>
-                        <li>Déclaration <br>de Revendication<br/><br/></li>
-                        <li>Déclaration <br>d'Affectation Parcellaire<br/><br/></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-6" style="position:relative;">
-                <div class="module module-bibliotheque">
-                    <h3>Une bibliothèque de documents téléchargables</h3>
-
-                    <ul>
-                      <li>Déclaration d'identification</li>
-                      <li>Déclaration de repli et déclassement</li>
-                      <li>Déclaration de remaniement de parcelles</li>
-                      <li>Déclaration de renonciation à produire</li>
-                      <li>Déclaration d'irrigation</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+</div>
+</div>
+<div class="presentation-services">
+<div class="row">
+    <div class="col-xs-12 presentation-title">
+        <h2>Saisissez en ligne vos déclarations liées au cahier des charges Côtes de Provence.</h2>
+    </div>
+</div>
 <jsp:directive.include file="includes/bottom.jsp" />
