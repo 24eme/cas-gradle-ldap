@@ -26,34 +26,47 @@
             <h3 class="h3">Espace personnel</h3>
             <div class="col-xs-10 col-xs-offset-1">
             <p>Entrez votre identifiant et votre mot de passe :</p>
-            <form id="credential" class="form-horizontal" action="/cas/login?service=https://declaration.syndicat-cotesdeprovence.com/" method="post">
+            <form:form method="post" cssClass="form-horizontal" commandName="${commandName}" htmlEscape="true">
+
+                <form:errors path="*" cssClass="alert alert-danger" id="status" element="div" />
+
                 <div class="form-group">
                     <label class="col-xs-4 control-label" for="username">Identifiant :</label>
                     <div class="col-xs-8">
-                            <input id="username" name="username" class="required form-control" tabindex="1" placeholder="Votre n&deg; d&#39;adh&eacute;rent" accesskey="i" type="text" value="" size="25" autocomplete="false"/>
+                        <c:if test="${not empty sessionScope.openIdLocalId}">
+                            <strong>${sessionScope.openIdLocalId}</strong>
+                            <input type="hidden" id="username" name="username" value="${sessionScope.openIdLocalId}" />
+                        </c:if>
+                        <c:if test="${empty sessionScope.openIdLocalId}">
+                            <spring:message code="screen.welcome.label.netid.accesskey" var="userNameAccessKey" />
+                            <form:input cssClass="required form-control" cssErrorClass="error" id="username" size="25" tabindex="1" placeholder="Votre n° d'adhérent" accesskey="${userNameAccessKey}" path="username" autocomplete="false" htmlEscape="true" />
+                        </c:if>
                     </div>
                 </div>
+
                 <div class="form-group">
                     <label class="col-xs-4 control-label" for="password">Mot de passe :</label>
                     <div class="col-xs-8">
-                        <input id="password" name="password" class="required form-control" tabindex="2" placeholder="Mot de passe d&eacute;fini &agrave; la cr&eacute;ation" accesskey="m" type="password" value="" size="25" autocomplete="off"/>
+                        <spring:message code="screen.welcome.label.password.accesskey" var="passwordAccessKey" />
+                        <form:password cssClass="required form-control" cssErrorClass="error" id="password" size="25" tabindex="2" placeholder="Mot de passe défini à la création" path="password"  accesskey="${passwordAccessKey}" htmlEscape="true" autocomplete="off" />
                     </div>
                 </div>
+
                 <div class="form-group">
                     <div class="col-xs-offset-4 col-xs-8">
-                        <a href="https://declaration.syndicat-cotesdeprovence.com/mot_de_passe_oublie" class="forgotten-password">Mot de passe oublié</a>
+                        <a href="https://declaration.syndicat-cotesdurhone.com/mot_de_passe_oublie" class="forgotten-password">Mot de passe oublié</a>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="col-md-offset-8 col-md-4">
-                      <input type="hidden" name="lt" value="" />
-                      <input type="hidden" name="execution" value="" />
+                      <input type="hidden" name="lt" value="${loginTicket}" />
+                      <input type="hidden" name="execution" value="${flowExecutionKey}" />
                       <input type="hidden" name="_eventId" value="submit" />
                         <button class="btn btn-default btn-block btn-lg" type="submit">Valider</button>
                     </div>
                 </div>
-            </form>
+            </form:form>
           </div>
         </div>
     </div>
