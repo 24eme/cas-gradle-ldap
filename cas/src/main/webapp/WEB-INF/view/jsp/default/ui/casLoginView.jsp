@@ -78,7 +78,7 @@
             <div class="col-xs-10 col-xs-offset-1">
             <p>S'il s'agit de votre première connexion, munissez vous de votre identifiant et du code de création à 4 chiffres qui vous a été fournis.</p>
             <a href="https://declaration.syndicat-cotesdeprovence.com/teledeclarant/code_creation" class="btn btn-default btn-block btn-lg">Créer votre compte</a>
-            <p>&nbsp;</p>
+            <p></p>
             </div>
         </div>
     </div>
