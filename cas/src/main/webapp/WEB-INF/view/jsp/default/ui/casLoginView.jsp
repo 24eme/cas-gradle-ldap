@@ -54,7 +54,7 @@
 
                 <div class="form-group">
                     <div class="col-xs-offset-4 col-xs-8">
-                        <a href="https://declaration.syndicat-cotesdurhone.com/mot_de_passe_oublie" class="forgotten-password">Mot de passe oublié</a>
+                        <a href="https://declaration.syndicat-cotesdeprovence.com/mot_de_passe_oublie" class="forgotten-password">Mot de passe oublié</a>
                     </div>
                 </div>
 
