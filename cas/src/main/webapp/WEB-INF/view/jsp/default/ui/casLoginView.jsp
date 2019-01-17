@@ -32,7 +32,7 @@
 
                     <div class="row">
                         <div class="col-md-7 col-md-offset-5">
-                            <c:url value="/teledeclarant/code_creation" var="creationurl" context="/">
+                            <c:url value="https://declaration.syndicat-cotesdurhone.com/teledeclarant/code_creation" var="creationurl" context="/">
                                 <c:if test="${not empty param.service}">
                                     <c:param name="service" value="${param.service}"/>
                                 </c:if>
