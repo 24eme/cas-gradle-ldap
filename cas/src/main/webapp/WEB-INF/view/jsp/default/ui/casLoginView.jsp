@@ -32,7 +32,12 @@
 
                     <div class="row">
                         <div class="col-md-7 col-md-offset-5">
-                            <a href="https://declaration.syndicat-cotesdurhone.com/teledeclarant/code_creation" class="btn btn-default btn-block btn-lg">Créer votre compte</a>
+                            <c:url value="/teledeclarant/code_creation" var="creationurl" context="/">
+                                <c:if test="${not empty param.service}">
+                                    <c:param name="service" value="${param.service}"/>
+                                </c:if>
+                            </c:url>
+                          <a href="${creationurl}" class="btn btn-default btn-block btn-lg">Créer votre compte</a>
                         </div>
                     </div>
                 </div>
