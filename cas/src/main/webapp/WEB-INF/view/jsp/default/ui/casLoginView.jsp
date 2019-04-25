@@ -80,8 +80,8 @@
 <div class="bloc bloc_inscription">
   <h2>Premi&egrave;re connexion</h2>
   <div class="bloc_contenu">
-    <p>S'il s'agit de votre premi&egrave;re connexion, munissez vous de votre identifiant et du code de cr&eacute;ation &agrave; 4 chiffres de cr&eacute;ation re&ccedil;us par courrier.</p>
-  
+    <p>S'il s'agit de votre premi&egrave;re connexion, munissez vous de votre identifiant et du code de cr&eacute;ation &agrave; 4 chiffres de cr&eacute;ation fournis par InterLoire.</p>
+
 <div class="form_ligne txt_centre">
 <a href="https://teledeclaration.vinsvaldeloire.pro/teledeclarant/code_creation" class="btn_majeur btn_orange">Cr&eacute;er un compte</a>
 </div>
