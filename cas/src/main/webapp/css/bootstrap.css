@@ -452,6 +452,7 @@ a {
   font-size: 18px;
   float: left;
   margin: 0;
+  color: #0e2244;
 }
 #header .logo-site img {
   margin-right: 30px;
@@ -478,7 +479,7 @@ a {
 }
 #content .form-block h2 {
   border-bottom: 1px solid #dcd9d3;
-  color: #7f0048;
+  color: #0e2244;
   font-size: 24px;
   margin-top: 0;
 }
@@ -510,7 +511,7 @@ a {
   margin: 10px 0;
 }
 #content .form-block .form-signin .btn {
-  background: #7f0048;
+  background: #0e2244;
   color: #fff;
   margin: 10px 0 0;
   display: block;
