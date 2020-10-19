@@ -105,9 +105,12 @@ address{margin-bottom:20px;font-style:normal;line-height:1.428571429}
 }
 @media (min-width:992px){
   .container{width:1140px}
+  .separator-hr{display: block !important}
+
 }
 @media (min-width:1200px){
   .container{width:1140px}
+  .separator-hr{display: block !important}
 }
 .container-fluid{margin-right:auto;margin-left:auto;padding-left:10px;padding-right:10px}
 .row{margin-left:-10px;margin-right:-10px}
@@ -820,16 +823,11 @@ div.date-picker div.input-group-addon{cursor:pointer}
 #message_ie p{font-size:12px}#message_ie p strong{font-size:16px;display:block;margin:0 0 5px}
 .backgroundsize body{background:url('../images/bg_global.jpg') 50% 0 no-repeat fixed;background-size:cover}
 .backgroundsize #bg-page{display:none}
-body{
-  overflow-y: hidden;
-}
-#page{
-  margin-top: 50px;
-}
+
 #bg-page{height:200%;left:-50%;position:fixed;top:-50%;width:200%}#bg-page img{bottom:0;left:0;margin:auto;min-width:50%;min-height:50%;position:absolute;right:0;top:0}
 .center-block{float:none}
 .page-header{margin-top:20px;padding-bottom:0;padding-left:20px;padding-right:20px;margin-left:-10px;margin-right:-10px}
-@media (max-width:479px){.col-xxs-12{float:none;width:auto}}
+@media (max-width:479px){.col-xxs-12{float:none;width:auto};}
 .row-margin{margin-bottom:20px;margin-top:30px}.row-margin.row-button{padding-top:5px}
 .panel .table-striped>tbody>tr:nth-child(odd)>td,.panel .table-striped>tbody>tr:nth-child(odd)>th{background-color:transparent}
 .panel .table-striped>tbody>tr:nth-child(even)>td,.panel .table-striped>tbody>tr:nth-child(even)>th{background-color:#fffbde}
@@ -1327,5 +1325,5 @@ ul{list-style:none}
 #modification_compte .presentation .btn_row,#modification_compte .modification .btn_row{padding-top:33px}
 #modification_compte .presentation .row,#modification_compte .modification .row{padding-top:20px}#modification_compte .presentation .row div,#modification_compte .modification .row div{line-height:30px}
 .panel-info>.panel-heading>h3{background-color:#9b9383;border-color:#fff;color:#fff}
-.separator-hr{position: absolute;top:150px;left: 570px;z-index: 1000}
-@media (max-width:600px){#header h1{ display:none !important; }}
+.separator-hr{position: absolute;top:150px;left: 570px;z-index: 1000;display: none;}
+@media (max-width:600px){#header h1,.banniere{ display:none !important; }}
