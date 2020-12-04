@@ -1,15 +1,13 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <jsp:directive.include file="includes/top.jsp" />
 
-<div id="cookiesDisabled" class="errors" style="display:none;">
-    <h2><spring:message code="screen.cookies.disabled.title" /></h2>
-    <p><spring:message code="screen.cookies.disabled.message" /></p>
-</div>
-
 <div class="box" id="login">
     <form:form method="post" id="fm1" commandName="${commandName}" htmlEscape="true" class="form-signin">
 
-	<h2>Espace professionnel</h2>
+        <h2>Espace déclaratif professionnel</h2>
+    <div>
+        <p style="text-align: justify;">Portail permettant aux profressionnels des Vins du Centre-Loire de faire leurs Déclarations Récapitulatives Mensuelles (DRM) et de les transférer à la Douane.</p>
+    </div>
         <form:errors path="*" id="msg" cssClass="errors form-signin" element="div" htmlEscape="false" style="text-align: left"/>
 	<h3>Entrez votre identifiant et votre mot de passe :</h3>
 
@@ -71,4 +69,8 @@
 
 						<a href="https://declaration.vins-centre-loire.com/teledeclarant/code_creation" class="btn">Créer votre compte</a>
 					</div>
+                    <div id="cookiesDisabled" class="errors" style="display:none;background-color:red">
+                            <h2><spring:message code="screen.cookies.disabled.title" /></h2>
+                                <p><spring:message code="screen.cookies.disabled.message" /></p>
+                    </div>
 <jsp:directive.include file="includes/bottom.jsp" />

@@ -13,6 +13,8 @@
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.css" media="screen" />
                 <meta name="_csrf" content="${_csrf.token}"/>
                 <meta name="_csrf_header" content="${_csrf.headerName}"/>
+                <meta name="description" content="Déclaration Vins Centre Loire : l'espace de télé-déclarations des DRM des ressortissants du BIVC"/>
+
 
 <!--                <spring:theme code="standard.custom.css.file" var="customCssFile" />
                 <link rel="stylesheet" href="<c:url value="${customCssFile}" />" />
