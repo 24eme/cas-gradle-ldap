@@ -41,7 +41,8 @@
 
     <alias name="serviceThemeResolver" alias="themeResolver" />
 
-    <alias name="jsonServiceRegistryDao" alias="serviceRegistryDao" />
+    <alias name="ldapServiceRegistryDao" alias="serviceRegistryDao" />
+    <alias name="myConnectionFactory" alias="ldapServiceRegistryConnectionFactory" />
 
     <alias name="defaultTicketRegistry" alias="ticketRegistry" />
 

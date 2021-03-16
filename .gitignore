@@ -11,10 +11,10 @@ overlays/
 *.iml
 *.ipr
 
-classes
 .gradle
 build
 
 *.log
 *.log.gz
 out/
+cas.properties

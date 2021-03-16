@@ -20,6 +20,7 @@ dependencies {
         transitive = true
     }
     runtime("org.jasig.cas:cas-server-support-ldap:${project.'cas.version'}")
+    runtime("org.jasig.cas:cas-server-support-ldap-service-registry:${project.'cas.version'}")
     runtime("org.jasig.service.persondir:person-directory-impl:1.7.1")
 }
 
