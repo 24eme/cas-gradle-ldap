@@ -13,7 +13,7 @@
 <!--[if gt IE 9]><!-->
 <html class=" js flexbox flexboxlegacy canvas canvastext no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg svgclippaths adownload contenteditable csscalc no-display-runin lastchild cssfilters mediaqueries display-table pointerevents no-shapes no-regions classlist dataset datalistelem filereader placeholder fullscreen formvalidation no-ie8compat json raf svgfilters bgpositionshorthand contextmenu boxsizing desktop portrait datauri" style="" lang="&lt;?php echo LANG; ?&gt;"><!--<![endif]--><!-- ####### PLEASE KEEP ####### --><head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <title>Côtes de Provence : Espace personnel des opérateurs du syndicat</title>
+    <title>IGPVins.Fr : Espace personnel des opérateurs des ODG IGP</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="author" content="24ème">
@@ -52,13 +52,10 @@
     <!-- #header -->
     <header id="header" class="container" role="banner">
         <div id="logo">
-            <a href="http://www.syndicat-cotesdeprovence.com/" title="Syndicat des Cotes de Provence | Retour à la page d'accueil">
-                <img src="images/logo_site.png" alt="Syndicat des Cotes de Provence">
+            <a href="http://www.vinigp.fr/" title="Confédération Vin IGP | Retour à la page d'accueil">
+                <img src="images/logo_site.png" alt="Vin IGP">
             </a>
         </div>
-        <div id="titre"><h1>
-          <img height="35" width="207" src="images/espace_personnel.png" alt="Espace personnel"/><img height="35" width="23" src="images/tiret.png" alt="-"/><img height="35" width="435" src="images/syndicat_des_cotes_de_provence.png" alt="Syndicat des Côtes de Provence"/>
-        </h1></div>
     </header>
 <!-- #content -->
 <section id="content" class="container">

@@ -99,7 +99,7 @@
 <div class="presentation-services">
 <div class="row">
     <div class="col-xs-12 presentation-title">
-        <h2>Saisissez en ligne vos déclarations liées au cahier des charges Côtes de Provence.</h2>
+        <h2>Saisissez en ligne vos déclarations liées au cahier des charges IGP.</h2>
     </div>
 </div>
 <jsp:directive.include file="includes/bottom.jsp" />

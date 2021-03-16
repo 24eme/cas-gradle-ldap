@@ -20,8 +20,7 @@
 
     <util:map id="authenticationHandlersResolvers">
         <entry key-ref="proxyAuthenticationHandler" value-ref="proxyPrincipalResolver" />
-        <entry key-ref="primaryAuthenticationHandler" value-ref="primaryPrincipalResolver" />
-        <entry key-ref="ldapAuthenticationHandler" value-ref="primaryPrincipalResolver" />
+        <entry key-ref="ldapAuthenticationHandler" value="#{null}" />
     </util:map>
 
     <util:list id="authenticationMetadataPopulators">
@@ -36,17 +35,8 @@
     <alias name="personDirectoryPrincipalResolver" alias="primaryPrincipalResolver" />
 
     <util:map id="attrRepoBackingMap">
-        <entry key="uid" value="uid" />
-        <entry key="eduPersonAffiliation" value="eduPersonAffiliation" />
-        <entry key="groupMembership" value="groupMembership" />
-        <entry>
-            <key><value>memberOf</value></key>
-            <list>
-                <value>faculty</value>
-                <value>staff</value>
-                <value>org</value>
-            </list>
-        </entry>
+        <entry key="mail" value="mail" />
+        <entry key="sn" value="sn" />
     </util:map>
 
     <alias name="serviceThemeResolver" alias="themeResolver" />
@@ -69,7 +59,18 @@
     <bean id="ldapAuthenticationHandler"
       class="org.jasig.cas.authentication.LdapAuthenticationHandler"
       p:principalIdAttribute="uid"
-      c:authenticator-ref="authenticator" />
+      c:authenticator-ref="authenticator" >
+      <property name="principalAttributeMap">
+
+        <map>
+                <entry key="mail" value="mail" />
+                <entry key="sn" value="sn" />
+
+        </map>
+
+</property>
+
+</bean>
 
     <ldaptive:anonymous-search-authenticator id="authenticator"
        ldapUrl="${ldap.url}"
