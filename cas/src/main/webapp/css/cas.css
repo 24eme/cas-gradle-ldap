@@ -1,0 +1,430 @@
+/**
+ * Reset
+ ******************************************/
+*
+{
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+html, body
+{
+    font-family: Calibri, Arial, Verdana, Helvetica, sans-serif;
+    height: 100%;
+    line-height: 1.2;
+}
+
+a img, fieldset { border: 0; }
+
+label, a * { cursor: pointer; }
+
+ol { list-style-position: inside; }
+
+ul { list-style: none; }
+
+textarea, input, select { font: 12px Calibri, Arial, Helvetica, sans-serif; }
+
+sup { vertical-align: top; }
+
+strong { font-weight: bold; }
+
+em { font-style: italic; }
+
+ins { text-decoration: none; }
+
+del { text-decoration: line-through; }
+
+table
+{
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
+a { color: #000; text-decoration: none; }
+a:hover, a:focus { text-decoration: underline; }
+
+.flc-screenNavigator-view-container{ margin: 0 auto;	width: 1000px;}
+
+ul {list-style:none; font-size:1.1em; padding:0 0 18px 0px;}
+
+body {
+    background: #000 url(../images/fonds/bg_global.jpg) center 0 no-repeat;
+    font-size: 12px;
+}
+
+
+ul#liens_evitement {
+    font-size:10px;
+    line-height:12px;
+    margin:7px 0 0;
+    text-transform:uppercase;
+    padding: 0;
+}
+
+/*
+ - used to clear or contain floats within a non-floated container
+ - this ruleset is used by UAs that handle :after - not IE - see ie_cas.css for IE fix
+http://www.positioniseverything.net/easyclearing.html and http://www.ejeliot.com/blog/59 */
+#header:after, #content:after, .clearfix:after {content:"."; clear:both; display:block; height:0; visibility:hidden;}
+
+
+/* HEADER --------------------------------- */
+#header {
+    background: url(../images/fonds/bg_header.png) 0 0 repeat;
+    _background: #000;
+    border: 1px solid #252303;
+    color: #f1f1f1;
+    height:71px;
+    margin: 7px 0;
+    padding: 10px;
+}
+
+#header h1#logo{
+    float: left;
+    text-align: center;
+    width: 135px;
+}
+
+#header #titre_rubrique{
+    border: solid #fff;
+    border-width:0 0 0 1px;
+    float: left;
+    margin: 0 12px;
+    padding: 10px 12px;
+    width: 658px;
+}
+
+#header #titre_rubrique h1{
+    font-size: 30px;
+    font-weight: normal;
+    margin: 0 0 5px;
+}
+
+/* CONTENT --------------------------------- */
+#intro_accueil_civa{
+    float: left;
+    width: 575px;
+}
+#boxes{
+    float: left;
+    width: 380px;
+}
+
+#content {
+    background: #fff;
+    border: 1px solid #000;
+    border-bottom-color: #dedede;
+    clear: both;
+    padding:30px 0;
+    position:relative;
+}
+
+#content h2.titre_principal {
+    background:none repeat scroll 0 0 #ACB701;
+    color:#F1F1F1;
+    display:inline-block;
+    font-size:20px;
+    font-weight:normal;
+    line-height:26px;
+    margin:0 0 0 20px;
+    padding:0 10px;
+}
+
+#content h2.titre_section {
+    background:none repeat scroll 0 0 #DCDFA9;
+    color:#848C03;
+    display:inline-block;
+    font-size:16px;
+    font-weight:normal;
+    line-height:25px;
+    padding:0 10px;
+}
+
+#application_dr {
+    background:none repeat scroll 0 0 #F1F1F1;
+    clear:both;
+    margin:0 0 22px;
+    padding:30px 20px;
+	overflow: hidden;
+    zoom: 1;
+}
+
+.contenu_section {
+    background:none repeat scroll 0 0 #EDECEC;
+    border:1px solid #C7C9C8;
+    padding:15px;
+    width:350px;
+}
+
+p.intro {
+    color:#999999;
+    font-size:14px;
+    margin:0 0 10px;
+}
+
+.ligne_form {
+    margin:0 0 5px 25px;
+    clear:both;
+    overflow:hidden;
+}
+
+.ligne_btn input.btn {
+    float:right;
+    vertical-align:middle;
+}
+
+#creer_compte{
+    font-weight: bold;
+    text-align: center;
+    font-size: 14px;
+    margin: 15px 0 0;
+}
+
+.link a{
+    color:#999999;
+    text-decoration: underline;
+}
+.link a:hover{
+    color: #000;
+}
+.link{
+    margin-top: 8px
+}
+
+/* Avertissement IE6 --------------------------------- */
+#avertissement_ie6 .contenu_section { background: #feefda; }
+#avertissement_ie6 .contenu_section p { color: #000; }
+#avertissement_ie6 .contenu_section .navigateurs { text-align: center; }
+#avertissement_ie6 .contenu_section .navigateurs a { margin: 0 5px; }
+
+
+#bandeau_civa
+{
+	clear: both;
+	padding: 20px 0 0;
+	overflow: hidden;
+}
+
+#bandeau_civa * { display: block; }
+
+
+/* FOOTER --------------------------------- */
+#footer{
+    color: #4d4f4f;
+    font-size: 11px;
+    padding: 20px 0;
+    text-align: center;
+}
+
+#footer * { display: inline; }
+
+#footer p, #footer ul li { margin: 0 12px 0 0; }
+
+#footer ul li a{
+    background: url(../images/bullet_noir.png) 0 center no-repeat;
+    color: #4d4f4f;
+    font-size: 11px;
+    padding: 0 0 0 15px;
+}
+
+/* MESSAGES --------------------------------- */
+.info, .success {clear:both; margin:18px 0; padding:20px 20px 20px 100px; font-size:10px; line-height:1.5;}
+.info {border:1px dotted #008; background:#eff url(../images/info.gif) no-repeat 20px 18px; color:#008;}
+
+.errors{
+    background: #ffdddd !important;
+    border: 1px solid #f30;
+    clear: both;
+    color: #000;
+    font-size: 12px;
+    margin: 0 0 10px;
+    padding: 5px;
+}
+
+.success {border:1px dotted #390; background:#dfa url(../images/confirm.gif) no-repeat 20px 18px; color:#390;}
+#content #content .success h2 {font-family:Georgia,"Times New Roman",Times,serif; font-size:18px; line-height:48px; font-weight:400; margin:0 18px 0 0; padding:0;}
+#content .success h2 {color: #008 !important;}
+#content .success h2 {color:#060 !important;}
+
+
+/* static messages */
+#content #msg p {padding:0;}
+
+/* FORMS --------------------------------- */
+.fl-label {
+    float:left;
+    width:90px;
+}
+
+
+/* Carrousel introduction --------------------------------- */
+/*
+#carrousel_cont
+{
+	height: 282px;
+	padding: 15px;
+	position: relative;
+	width: 520px
+}
+
+#carrousel_cont #carrousel { }
+
+#carrousel_cont #carrousel ul
+{
+	overflow: hidden;
+	padding: 0;
+}
+
+#carrousel_cont #carrousel ul li
+{
+	position: relative;
+	width: 520px;
+	height: 282px;
+}
+
+#carrousel_cont #carrousel ul li img { display: block; }
+
+#carrousel_cont #carrousel ul li strong
+{
+	background: url(../images/carrousel/carrousel_bg_accroche.png) 0 0 repeat;
+	bottom: 30px;
+	color: #4b4c4b;
+	display: inline-block;
+	font-family: Calibri, Arial, Helvetica, sans-serif; 
+	font-size: 24px;
+	font-weight: normal;
+	padding: 8px 25px;
+	position: absolute;
+	right: 0;
+}
+
+#carrousel_cont .carrousel_btn
+{
+	display: block;
+	position: absolute;
+	text-align: center;
+	bottom: 10px;
+	left: 0;
+	width: 100%;
+}
+
+#carrousel_cont .carrousel_btn ol
+{
+	display: inline;
+	list-style: none;
+}
+
+#carrousel_cont .carrousel_btn ol li
+{
+	display: inline;
+	margin: 0 2px;
+}
+
+#carrousel_cont .carrousel_btn ol li a
+{
+	background: url(../images/carrousel/carrousel_btn.png) 0 0 no-repeat;
+	display: inline-block;
+	height: 17px;
+	outline: 0;
+	text-indent: -9999px; !text-indent: 0;
+	width: 17px;
+}
+
+#carrousel_cont .carrousel_btn ol li.current a { background-position: 0 -17px; }
+
+#carrousel_cont .carrousel_btn ol li a span { text-indent: -9999px; }
+*/
+
+#carrousel_presentation
+{
+	float: left;
+	overflow: hidden;
+	position: relative;
+	width: 550px;
+	zoom: 1;
+}
+
+#carrousel_presentation #carrousel_presentation_cont
+{
+	height: 312px;
+	position: relative;
+}
+
+#carrousel_presentation #carrousel_presentation_cont ul { overflow: hidden; }
+
+#carrousel_presentation #carrousel_presentation_cont ul li
+{
+	height: 312px;
+	position: relative;
+	width: 550px;
+}
+
+#carrousel_presentation #carrousel_presentation_cont ul li img { display: block; }
+
+#carrousel_presentation #carrousel_presentation_cont ul li .desc
+{
+	background: url(../images/carrousel/carrousel_desc.png) 0 0 repeat;
+	_background: #000;
+	bottom: 0;
+	color: #fff;
+	left: 0;
+	min-height: 90px; _height: 90px;
+	padding: 23px 38px 0;
+	position: absolute;
+	width: 474px;
+}
+
+#carrousel_presentation #carrousel_presentation_cont ul li .desc h2
+{
+	font-size: 28px;
+	text-transform: uppercase;
+}
+
+#carrousel_presentation #carrousel_presentation_cont ul li .desc p
+{
+	font-size: 14px;
+	padding: 0 100px 0 0;
+}
+
+#carrousel_presentation #carrousel_presentation_cont ul li .desc a
+{
+	color: #fff;
+	text-decoration: none;
+}
+
+#carrousel_presentation .carrousel_btn
+{
+	bottom: 10px;
+	display: block;
+	font-size: 22px;
+	position: absolute;
+	right: 10px;
+}
+
+#carrousel_presentation .carrousel_btn ol { list-style: none; }
+
+#carrousel_presentation .carrousel_btn ol li
+{
+	display: inline;
+	margin: 0 0 0 5px;
+}
+
+#carrousel_presentation .carrousel_btn ol li a
+{
+	background: #606060;
+	border: 1px solid #ffffff;
+	color: #fff;
+	display: inline-block;
+	height: 30px;
+	line-height: 30px;
+	outline: 0;
+	padding: 0 5px;
+	text-align: center;
+	text-decoration: none !important;
+}
+
+#carrousel_presentation .carrousel_btn ol li.current a { background: #bebebe; }
+
+#carrousel_presentation .carrousel_btn ol li a span {  }

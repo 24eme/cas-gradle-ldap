@@ -6,14 +6,11 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <spring:theme code="mobile.custom.css.file" var="mobileCss" text="" />
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
-	<head>
-	    <title>Espace des professionnels du Vignoble d’Alsace</title>
+    <head>
+        <title>Espace des professionnels du Vignoble d’Alsace</title>
         <c:choose>
            <c:when test="${not empty requestScope['isMobile'] and not empty mobileCss}">
                 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
@@ -26,13 +23,13 @@
            <c:otherwise>
                 <link type="text/css" rel="stylesheet" href="<spring:theme code="standard.custom.css.file" />" />
                 <script type="text/javascript" src="js/common_rosters.js"></script>
-				<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
-				<script type="text/javascript" src="js/sudoSlider.min.js"></script>
+                <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+                <script type="text/javascript" src="js/sudoSlider.min.js"></script>
            </c:otherwise>
         </c:choose>
-	    <link rel="icon" href="<c:url value="/favicon.ico" />" type="image/x-icon" />
-	</head>
-	<body id="cas" onload="init();" class="fl-theme-iphone">
+        <link rel="icon" href="<c:url value="/favicon.ico" />" type="image/x-icon" />
+    </head>
+    <body id="cas" onload="init();" class="fl-theme-iphone">
     <div class="flc-screenNavigator-view-container">
         <div class="fl-screenNavigator-view">
             <ul class="clearfix" id="liens_evitement"></ul>

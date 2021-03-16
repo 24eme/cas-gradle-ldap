@@ -1,107 +1,230 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+	| deployerConfigContext.xml centralizes into one file some of the declarative configuration that
+	| all CAS deployers will need to modify.
+	|
+	| This file declares some of the Spring-managed JavaBeans that make up a CAS deployment.  
+	| The beans declared in this file are instantiated at context initialization time by the Spring 
+	| ContextLoaderListener declared in web.xml.  It finds this file because this
+	| file is among those declared in the context parameter "contextConfigLocation".
+	|
+	| By far the most common change you will need to make in this file is to change the last bean
+	| declaration to replace the default SimpleTestUsernamePasswordAuthenticationHandler with
+	| one implementing your approach for authenticating usernames and passwords.
+	+-->
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:context="http://www.springframework.org/schema/context"
        xmlns:p="http://www.springframework.org/schema/p"
-       xmlns:c="http://www.springframework.org/schema/c"
-       xmlns:aop="http://www.springframework.org/schema/aop"
-       xmlns:tx="http://www.springframework.org/schema/tx"
-       xmlns:util="http://www.springframework.org/schema/util"
        xmlns:sec="http://www.springframework.org/schema/security"
-       xmlns:ldaptive="http://www.ldaptive.org/schema/spring-ext"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
-       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
-       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
-       http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd
-       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
-       http://www.ldaptive.org/schema/spring-ext http://www.ldaptive.org/schema/spring-ext.xsd">
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.0.xsd">
+	<!--
+		| This bean declares our AuthenticationManager.  The CentralAuthenticationService service bean
+		| declared in applicationContext.xml picks up this AuthenticationManager by reference to its id, 
+		| "authenticationManager".  Most deployers will be able to use the default AuthenticationManager
+		| implementation and so do not need to change the class of this bean.  We include the whole
+		| AuthenticationManager here in the userConfigContext.xml so that you can see the things you will
+		| need to change in context.
+		+-->
+	<bean id="authenticationManager"
+		class="org.jasig.cas.authentication.AuthenticationManagerImpl">
+		<!--
+			| This is the List of CredentialToPrincipalResolvers that identify what Principal is trying to authenticate.
+			| The AuthenticationManagerImpl considers them in order, finding a CredentialToPrincipalResolver which 
+			| supports the presented credentials.
+			|
+			| AuthenticationManagerImpl uses these resolvers for two purposes.  First, it uses them to identify the Principal
+			| attempting to authenticate to CAS /login .  In the default configuration, it is the DefaultCredentialsToPrincipalResolver
+			| that fills this role.  If you are using some other kind of credentials than UsernamePasswordCredentials, you will need to replace
+			| DefaultCredentialsToPrincipalResolver with a CredentialsToPrincipalResolver that supports the credentials you are
+			| using.
+			|
+			| Second, AuthenticationManagerImpl uses these resolvers to identify a service requesting a proxy granting ticket. 
+			| In the default configuration, it is the HttpBasedServiceCredentialsToPrincipalResolver that serves this purpose. 
+			| You will need to change this list if you are identifying services by something more or other than their callback URL.
+			+-->
+		<property name="credentialsToPrincipalResolvers">
+			<list>
+				<!--
+					| UsernamePasswordCredentialsToPrincipalResolver supports the UsernamePasswordCredentials that we use for /login 
+					| by default and produces SimplePrincipal instances conveying the username from the credentials.
+					| 
+					| If you've changed your LoginFormAction to use credentials other than UsernamePasswordCredentials then you will also
+					| need to change this bean declaration (or add additional declarations) to declare a CredentialsToPrincipalResolver that supports the
+					| Credentials you are using.
+					+-->
+				<bean class="org.jasig.cas.authentication.principal.UsernamePasswordCredentialsToPrincipalResolver">
+                                        <property name="attributeRepository"><ref bean="attributeRepository" /></property>
+				</bean>
 
+				<!--
+					| HttpBasedServiceCredentialsToPrincipalResolver supports HttpBasedCredentials.  It supports the CAS 2.0 approach of
+					| authenticating services by SSL callback, extracting the callback URL from the Credentials and representing it as a
+					| SimpleService identified by that callback URL.
+					|
+					| If you are representing services by something more or other than an HTTPS URL whereat they are able to
+					| receive a proxy callback, you will need to change this bean declaration (or add additional declarations).
+					+-->
+				<bean class="org.jasig.cas.authentication.principal.HttpBasedServiceCredentialsToPrincipalResolver" />
+			</list>
+		</property>
 
-    <util:map id="authenticationHandlersResolvers">
-        <entry key-ref="proxyAuthenticationHandler" value-ref="proxyPrincipalResolver" />
-        <entry key-ref="ldapAuthenticationHandler" value="#{null}" />
-    </util:map>
-
-    <util:list id="authenticationMetadataPopulators">
-        <ref bean="successfulHandlerMetaDataPopulator" />
-        <ref bean="rememberMeAuthenticationMetaDataPopulator" />
-    </util:list>
-
-    <bean id="attributeRepository" class="org.jasig.services.persondir.support.NamedStubPersonAttributeDao"
-          p:backingMap-ref="attrRepoBackingMap" />
-
-    <alias name="acceptUsersAuthenticationHandler" alias="primaryAuthenticationHandler" />
-    <alias name="personDirectoryPrincipalResolver" alias="primaryPrincipalResolver" />
-
-    <util:map id="attrRepoBackingMap">
-        <entry key="mail" value="mail" />
-        <entry key="sn" value="sn" />
-    </util:map>
-
-    <alias name="serviceThemeResolver" alias="themeResolver" />
-
-    <alias name="jsonServiceRegistryDao" alias="serviceRegistryDao" />
-
-    <alias name="defaultTicketRegistry" alias="ticketRegistry" />
-
-    <alias name="ticketGrantingTicketExpirationPolicy" alias="grantingTicketExpirationPolicy" />
-    <alias name="multiTimeUseOrTimeoutExpirationPolicy" alias="serviceTicketExpirationPolicy" />
-
-    <alias name="anyAuthenticationPolicy" alias="authenticationPolicy" />
-    <alias name="acceptAnyAuthenticationPolicyFactory" alias="authenticationPolicyFactory" />
-
-    <bean id="auditTrailManager"
-          class="org.jasig.inspektr.audit.support.Slf4jLoggingAuditTrailManager"
-          p:entrySeparator="${cas.audit.singleline.separator:|}"
-          p:useSingleLine="${cas.audit.singleline:false}"/>
-
-    <bean id="ldapAuthenticationHandler"
-      class="org.jasig.cas.authentication.LdapAuthenticationHandler"
-      p:principalIdAttribute="uid"
-      c:authenticator-ref="authenticator" >
-      <property name="principalAttributeMap">
-
-        <map>
-                <entry key="mail" value="mail" />
-                <entry key="sn" value="sn" />
-
-        </map>
-
-</property>
-
+		<!--
+			| Whereas CredentialsToPrincipalResolvers identify who it is some Credentials might authenticate, 
+			| AuthenticationHandlers actually authenticate credentials.  Here we declare the AuthenticationHandlers that
+			| authenticate the Principals that the CredentialsToPrincipalResolvers identified.  CAS will try these handlers in turn
+			| until it finds one that both supports the Credentials presented and succeeds in authenticating.
+			+-->
+		<property name="authenticationHandlers">
+			<list>
+				<!--
+					| This is the authentication handler that authenticates services by means of callback via SSL, thereby validating
+					| a server side SSL certificate.
+					+-->
+		<bean class="org.jasig.cas.authentication.handler.support.HttpBasedServiceCredentialsAuthenticationHandler"
+                        p:httpClient-ref="httpClient" />
+		<bean class="org.jasig.cas.adaptors.ldap.FastBindLdapAuthenticationHandler" >
+                                <property name="filter" value="uid=%u,ou=People,dc=vinsalsace,dc=pro" />
+                                <property name="contextSource" ref="contextSource" />
+		</bean>
+	</list>
+     </property>
 </bean>
 
-    <ldaptive:anonymous-search-authenticator id="authenticator"
-       ldapUrl="${ldap.url}"
-       connectTimeout="${ldap.connectTimeout}"
-       validateOnCheckOut="${ldap.pool.validateOnCheckout}"
-       failFastInitialize="true"
-       blockWaitTime="${ldap.pool.blockWaitTime}"
-       idleTime="${ldap.pool.idleTime}"
-       maxPoolSize="${ldap.pool.maxSize}"
-       minPoolSize="${ldap.pool.minSize}"
-       validatePeriodically="${ldap.pool.validatePeriodically}"
-       validatePeriod="${ldap.pool.validatePeriod}"
-       prunePeriod="${ldap.pool.prunePeriod}"
-       useSSL="${ldap.use.ssl:false}"
-       useStartTLS="${ldap.useStartTLS}"
-       usePasswordPolicy="${ldap.usePpolicy:true}"
-       allowMultipleDns="${ldap.allowMultipleDns:false}"
-       baseDn="${ldap.baseDn}"
-       subtreeSearch="${ldap.subtree.search:true}"
-       userFilter="${ldap.authn.searchFilter}" />
+	<!--
+	This bean defines the security roles for the Services Management application.  Simple deployments can use the in-memory version.
+	More robust deployments will want to use another option, such as the Jdbc version.
+	
+The name of this should remain "userDetailsService" in order for Spring Security to find it.
 
+	To use this, you should add an entry similar to the following between the two value tags:
+	battags=notused,ROLE_ADMIN
+	
+	where battags is the username you want to grant access to.  You can put one entry per line.
+	 -->
+    <!-- <sec:user name="@@THIS SHOULD BE REPLACED@@" password="notused" authorities="ROLE_ADMIN" />-->
 
-    <alias name="neverThrottle" alias="authenticationThrottle" />
+    <sec:user-service id="userDetailsService">
+        <sec:user name="battags" password="notused" authorities="ROLE_ADMIN" />
+    </sec:user-service>
+	
+	<!-- 
+	Bean that defines the attributes that a service may return.  This example uses the Stub/Mock version.  A real implementation
+	may go against a database or LDAP server.  The id should remain "attributeRepository" though.
+	 -->
+	<bean id="attributeRepository"  class="org.jasig.services.persondir.support.ldap.LdapPersonAttributeDao">
+	  <property name="contextSource" ref="contextSource" />
+	  <property name="baseDN" value="ou=People,dc=vinsalsace,dc=pro" />
+	  <property name="requireAllQueryAttributes" value="true" />
+	  <!--
+	      Attribute mapping beetween principal (key) and LDAP (value) names
+	      used to perform the LDAP search.  By default, multiple search criteria
+	      are ANDed together.  Set the queryType property to change to OR.
+	    -->
+	  <property name="queryAttributeMapping">
+	    <map>
+	      <entry key="username" value="uid" />
+	    </map>
+	  </property>
+	  <property name="resultAttributeMapping">
+	    <map>
+	      <!-- Mapping beetween LDAP entry attributes (key) and Principal's (value) -->
+	      <entry key="cn" value="nom"/>
+	      <entry key="mail" value="email" />
+	    </map>
+	  </property>
+	</bean> 
+	<!-- 
+	Sample, in-memory data store for the ServiceRegistry. A real implementation
+	would probably want to replace this with the JPA-backed ServiceRegistry DAO
+	The name of this bean should remain "serviceRegistryDao".
+	 -->
+	<bean
+		id="serviceRegistryDao"
+        class="org.jasig.cas.services.InMemoryServiceRegistryDaoImpl">
+            <property name="registeredServices">
+                <list>
+                    <bean class="org.jasig.cas.services.RegisteredServiceImpl">
+                        <property name="id" value="0" />
+                        <property name="name" value="HTTPS_AVA_1" />
+                        <property name="description" value="Only Allows HTTPS Urls" />
+                        <property name="serviceId" value="https://*ava-aoc.fr/**" />
+                        <property name="allowedAttributes"><list><value>nom</value><value>email</value></list></property>
+                        <property name="theme" value="ava" />
+                    </bean>
+                    <bean class="org.jasig.cas.services.RegisteredServiceImpl">
+                        <property name="id" value="1" />
+                        <property name="name" value="HTTPS_AVA_2" />
+                        <property name="description" value="Only Allows HTTPS Urls" />
+                        <property name="serviceId" value="https://*ava-aoc.fr" />
+                        <property name="allowedAttributes"><list><value>nom</value><value>email</value></list></property>
+                        <property name="theme" value="ava" />
+                    </bean>
+                    <bean class="org.jasig.cas.services.RegisteredServiceImpl">
+                        <property name="id" value="2" />
+                        <property name="name" value="HTTP_AVA_1" />
+                        <property name="description" value="Only Allows HTTPS Urls" />
+                        <property name="serviceId" value="http://*ava-aoc.fr/**" />
+                        <property name="allowedAttributes"><list><value>nom</value><value>email</value></list></property>
+                        <property name="theme" value="ava" />
+                    </bean>
+                    <bean class="org.jasig.cas.services.RegisteredServiceImpl">
+                        <property name="id" value="3" />
+                        <property name="name" value="HTTP_AVA_2" />
+                        <property name="description" value="Only Allows HTTPS Urls" />
+                        <property name="serviceId" value="http://*ava-aoc.fr" />
+                        <property name="allowedAttributes"><list><value>nom</value><value>email</value></list></property>
+                        <property name="theme" value="ava" />
+                    </bean>    
+                    <bean class="org.jasig.cas.services.RegisteredServiceImpl">
+                        <property name="id" value="4" />
+                        <property name="name" value="HTTP" />
+                        <property name="description" value="Only Allows HTTP Urls" />
+                        <property name="serviceId" value="http://**" />
+                        <property name="allowedAttributes"><list><value>nom</value><value>email</value></list></property>
+                    </bean>
+                    <bean class="org.jasig.cas.services.RegisteredServiceImpl">
+                        <property name="id" value="5" />
+                        <property name="name" value="HTTPS" />
+                        <property name="description" value="Only Allows HTTPS Urls" />
+                        <property name="serviceId" value="https://**" />
+                        <property name="allowedAttributes"><list><value>nom</value><value>email</value></list></property>
+                    </bean>
 
-    <util:list id="monitorsList">
-        <ref bean="memoryMonitor" />
-        <ref bean="sessionMonitor" />
-    </util:list>
+                    <bean class="org.jasig.cas.services.RegisteredServiceImpl">
+                        <property name="id" value="6" />
+                        <property name="name" value="IMAPS" />
+                        <property name="description" value="Only Allows HTTPS Urls" />
+                        <property name="serviceId" value="imaps://**" />
+                    </bean>
 
-    <alias name="defaultPrincipalFactory" alias="principalFactory" />
-    <alias name="defaultAuthenticationTransactionManager" alias="authenticationTransactionManager" />
-    <alias name="defaultPrincipalElectionStrategy" alias="principalElectionStrategy" />
-    <alias name="tgcCipherExecutor" alias="defaultCookieCipherExecutor" />
+                    <bean class="org.jasig.cas.services.RegisteredServiceImpl">
+                        <property name="id" value="7" />
+                        <property name="name" value="IMAP" />
+                        <property name="description" value="Only Allows IMAP Urls" />
+                        <property name="serviceId" value="imap://**" />
+                    </bean>
+                </list>
+            </property>
+        </bean>
+<bean id="contextSource" class="org.springframework.ldap.core.support.LdapContextSource">
+	<property name="pooled" value="false"/>
+	<property name="urls">
+		<list>
+			<value>ldap://127.0.0.1/</value>
+		</list>
+	</property>
+	<property name="userDn" value="cn=admin,dc=vinsalsace,dc=pro"/>
+	<property name="password" value="aoXaeMau0wie"/>
+	<property name="baseEnvironmentProperties">
+		<map>
+			<entry>
+				<key>
+					<value>java.naming.security.authentication</value>
+				</key>
+				<value>simple</value>
+			</entry>
+		</map>
+	</property>
+</bean>
 </beans>
