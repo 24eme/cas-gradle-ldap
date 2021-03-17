@@ -6,6 +6,13 @@
 ##
 ##############################################################################
 
+
+echo "Ne fonctionne pas pour cette version"
+echo ""
+echo "cas/src/main/webapp/ contient tout ce qu'il faut pour faire le war"
+echo ""
+exit 2
+
 # Attempt to set APP_HOME
 # Resolve links: $0 may be a link
 PRG="$0"
