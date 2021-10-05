@@ -453,7 +453,7 @@ a {
 }
 #content .form-block h2 {
   border-bottom: 1px solid #dcd9d3;
-  color: #8faf6e;
+  color: #1c2436;
   font-size: 24px;
   margin-top: 0;
 }
@@ -486,7 +486,7 @@ a {
   margin: 10px 0;
 }
 #content .form-block .form-signin .btn {
-  background: #8faf6e;
+  background: #1c2436;
   color: #fff;
   margin: 10px 0 0;
   display: block;
@@ -499,13 +499,13 @@ a {
   font-weight: bold;
 }
 #content .form-block .form-signup .btn {
-  background: #48453f;
+  background: #c29140;
   color: #fff;
   float: right;
 }
 #content .form-block .form-bottom {
   background: #efeeec;
-  color: #8faf6e;
+  color: #1c2436;
   font-family: "oswaldregular", Arial, sans-serif;
   font-size: 18px;
   position: relative;
@@ -541,7 +541,7 @@ a {
   vertical-align: middle;
 }
 #footer {
-  background: #48453f;
+  background: #1c2436;
   color: #fff;
   height: 145px;
   line-height: 145px;
