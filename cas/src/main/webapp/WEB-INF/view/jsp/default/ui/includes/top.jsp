@@ -57,7 +57,7 @@
             </a>
         </div>
         <div id="titre"><h1>
-          <img height="35" width="207" src="images/espace_personnel.png" alt="Espace personnel"/><img height="35" width="23" src="images/tiret.png" alt="-"/><img height="35" width="435" src="images/syndicat_des_cotes_de_provence.png" alt="Syndicat des Côtes de Provence"/>
+          <img height="35" width="207" src="images/espace_personnel.png" alt="Espace personnel"/>
         </h1></div>
     </header>
 <!-- #content -->
